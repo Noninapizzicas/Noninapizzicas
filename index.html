@@ -10,66 +10,81 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f0f0f0;
         }
         .container {
-            width: 210mm;
-            height: 297mm;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20mm;
+            padding: 20px;
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         header {
             text-align: center;
-            padding-bottom: 10px;
+            padding-bottom: 20px;
         }
         header img {
-            max-width: 100px;
+            max-width: 120px;
         }
         h1 {
-            font-size: 24px;
-            margin: 10px 0;
+            font-size: 28px;
+            margin: 15px 0;
+            color: #ff6347;
+            font-weight: bold;
         }
         .menu-section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .menu-section h2 {
-            font-size: 18px;
+            font-size: 22px;
             color: #333;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
         .menu-item {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #ccc;
-            padding: 5px 0;
+            padding: 10px 0;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item strong {
+            color: #333;
         }
         .menu-item img {
-            width: 15px;
+            width: 18px;
             vertical-align: middle;
         }
         footer {
             text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+        footer img {
+            width: 120px;
+            margin-top: 15px;
         }
         .buttons {
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
         }
         .buttons button {
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 12px 25px;
+            margin: 10px;
             font-size: 16px;
             background-color: #ff6347;
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        footer img {
-    width: 150px; /* Reducir tamaño del QR */
-    margin-top: 20px; /* Añadir margen superior */
-}
+        .buttons button:hover {
+            background-color: #e5533c;
+        }
     </style>
 </head>
 <body>
@@ -91,8 +106,7 @@
             Haz tu pedido online
         </a>
         <br>
-        <img src="qr_code_noninapizzicas.png
-" alt="QR para pedidos">
+        <img src="qr_code_noninapizzicas.png" alt="QR para pedidos">
     </footer>
     
     <div class="buttons">
@@ -110,7 +124,7 @@
       data.forEach(item => {
         let menuItem = `<div class="menu-item">
                           <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                          <span><img src="euro_symbol.png" alt="euro"> ${item.price}</span>
                         </div>`;
         menuContainer.innerHTML += menuItem;
       });
