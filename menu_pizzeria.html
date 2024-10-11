@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de NO NI NÁ Pizzicas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        header img {
+            max-width: 100px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h2 {
+            font-size: 18px;
+            color: #333;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+        .menu-item img {
+            width: 15px;
+            vertical-align: middle;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+        }
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="logo.png" alt="Logo Pizzería">
+        <h1>Menú de NO NI NÁ Pizzicas</h1>
+    </header>
+
+    <div class="menu-section">
+        <h2>PIZZICAS</h2>
+        <div id="menu"></div> <!-- Aquí se cargará el menú dinámicamente -->
+    </div>
+
+    <footer>
+        Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
+        <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">
+            Haz tu pedido online
+        </a>
+        <br>
+        <img src="qr_code.png" alt="QR para pedidos">
+    </footer>
+    
+    <div class="buttons">
+        <button onclick="window.print()">Imprimir</button>
+        <button onclick="downloadPDF()">Descargar PDF</button>
+    </div>
+</div>
+
+<script>
+  // Carga el menú desde el archivo JSON
+  fetch('menu.json')
+    .then(response => response.json())
+    .then(data => {
+      let menuContainer = document.getElementById('menu');
+      data.forEach(item => {
+        let menuItem = `<div class="menu-item">
+                          <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                        </div>`;
+        menuContainer.innerHTML += menuItem;
+      });
+    });
+</script>
+
+</body>
+</html>
