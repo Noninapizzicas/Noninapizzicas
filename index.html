@@ -12,78 +12,77 @@
             background-color: #f0f0f0;
         }
         .container {
-            max-width: 1000px;
+            max-width: 950px; /* Ajustar el ancho máximo */
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px; /* Reducir los márgenes */
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
         header {
             text-align: center;
-            padding-bottom: 20px;
+            padding-bottom: 10px; /* Reducir espaciado */
         }
         header img {
-            max-width: 120px;
+            max-width: 100px; /* Reducir el tamaño del logo */
         }
         h1 {
-            font-size: 28px;
-            margin: 15px 0;
+            font-size: 24px; /* Reducir el tamaño del título */
+            margin: 10px 0; /* Reducir márgenes */
             color: #ff6347;
             font-weight: bold;
         }
         .menu-sections {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            gap: 15px; /* Reducir la separación entre columnas */
         }
         .menu-section {
             flex: 1;
         }
         .menu-section h2 {
-            font-size: 22px;
+            font-size: 20px; /* Reducir el tamaño de los títulos de secciones */
             color: #333;
-            border-bottom: 2px solid #ff6347;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid #ff6347; /* Línea más delgada */
+            padding-bottom: 5px; /* Reducir espaciado */
+            margin-bottom: 10px; /* Reducir espaciado */
         }
         .menu-item {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            font-size: 16px;
+            padding: 8px 0; /* Reducir el padding */
+            font-size: 14px; /* Reducir el tamaño de la fuente */
             border-bottom: 1px solid #ddd;
         }
         .menu-item strong {
             color: #333;
         }
         .menu-item img {
-            width: 18px;
+            width: 16px; /* Reducir el tamaño del símbolo de euro */
             vertical-align: middle;
         }
         .pizzicas-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 10px; /* Reducir el gap entre las columnas de Pizzicas */
         }
         footer {
             text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
+            margin-top: 20px; /* Reducir espaciado */
+            font-size: 12px; /* Reducir el tamaño de la fuente en el footer */
             color: #666;
         }
         footer img {
-            width: 120px;
-            margin-top: 15px;
+            width: 100px; /* Reducir el tamaño del QR */
+            margin-top: 10px; /* Reducir margen */
         }
         .buttons {
-            margin-top: 30px;
+            margin-top: 20px; /* Reducir espaciado */
             text-align: center;
         }
         .buttons button {
-            padding: 12px 25px;
-            margin: 10px;
-            font-size: 16px;
+            padding: 8px 20px; /* Reducir el padding de los botones */
+            font-size: 14px; /* Reducir el tamaño de los botones */
             background-color: #ff6347;
             color: white;
             border: none;
@@ -144,46 +143,52 @@
 </div>
 
 <script>
-  // Sección de Pizzicas
-  const pizzicas = [
-    { "name": "Samba", "ingredients": "Tomate, Mozzarella, Albahaca", "price": "8.00" },
-    { "name": "Bachata", "ingredients": "Tomate, Mozzarella, Anchoas, Alcaparras, Cebolla, Olivas", "price": "9.00" },
-    { "name": "Fandango", "ingredients": "Ajo, Mozzarella, Queso azul", "price": "8.00" },
-    { "name": "Milonga", "ingredients": "Tomate, Mozzarella, York", "price": "8.50" },
-    { "name": "Batucada", "ingredients": "Tomate, Mozzarella, Queso azul, Mezcla de quesos, Nata", "price": "9.00" },
-    { "name": "Ranchera", "ingredients": "Tomate, Mozzarella, Bacon, Cebolla, Salsa BBQ", "price": "9.00" },
-    { "name": "The Veggie Symphony", "ingredients": "Tomate, Mozzarella, Cebolla, Champiñón, Calabacín, Espárragos, Pimiento verde", "price": "9.00" },
-    { "name": "Folk", "ingredients": "Tomate seco, Mozzarella, Cebolla, Champiñón, Salsa de ajo asado y trufa, Anchoas", "price": "9.50" },
-    { "name": "Rockabilly", "ingredients": "Tomate, Mozzarella, Bacon, Cebolla, Nata", "price": "9.00" },
-    { "name": "Bossa Nova", "ingredients": "Tomate, Mozzarella, Atún, Champiñón, Pimiento verde", "price": "9.50" }
-  ];
-  
-  const pizzadillos = [
-    { "name": "PizzaDillo 1", "ingredients": "Ingrediente1, Ingrediente2", "price": "7.00" },
-    { "name": "PizzaDillo 2", "ingredients": "Ingrediente1, Ingrediente2", "price": "8.00" },
-    { "name": "PizzaDillo 3", "ingredients": "Ingrediente1, Ingrediente2", "price": "7.50" }
-  ];
+  // Cargar el menú desde el archivo JSON
+  fetch('menu.json')
+    .then(response => response.json())
+    .then(data => {
+      let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
+      let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
+      let menuPizzadillos = document.getElementById('menu-pizzadillos');
+      let menuEntrantes = document.getElementById('menu-entrantes');
 
-  const entrantes = [
-    { "name": "Huevos Salseros", "ingredients": "Huevos, Salsa", "price": "5.00" }
-  ];
+      // Dividir las Pizzicas en dos columnas
+      const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
+      const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
+      const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
 
-  function loadMenuItems(menuItems, containerId) {
-    const container = document.getElementById(containerId);
-    menuItems.forEach(item => {
-      const menuItem = `<div class="menu-item">
-                          <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
-                        </div>`;
-      container.innerHTML += menuItem;
+      // Cargar las Pizzicas en la primera columna
+      pizzicasColumna1.forEach(item => {
+        menuPizzicas1.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
+
+      // Cargar las Pizzicas en la segunda columna
+      pizzicasColumna2.forEach(item => {
+        menuPizzicas2.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
+
+      // Cargar PizzaDillos
+      data.pizzadillos.forEach(item => {
+        menuPizzadillos.innerHTML += `<div class="menu-item">
+                                        <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                        <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                      </div>`;
+      });
+
+      // Cargar Entrantes
+      data.entrantes.forEach(item => {
+        menuEntrantes.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
     });
-  }
-
-  // Cargar los productos en las columnas correspondientes
-  loadMenuItems(pizzicas.slice(0, Math.ceil(pizzicas.length / 2)), "menu-pizzicas-1");
-  loadMenuItems(pizzicas.slice(Math.ceil(pizzicas.length / 2)), "menu-pizzicas-2");
-  loadMenuItems(pizzadillos, "menu-pizzadillos");
-  loadMenuItems(entrantes, "menu-entrantes");
 </script>
 
 </body>
