@@ -5,98 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NO NI NÁ Pizzicas</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 950px; /* Ajustar el ancho máximo */
-            margin: 0 auto;
-            padding: 15px; /* Reducir los márgenes */
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        header {
-            text-align: center;
-            padding-bottom: 10px; /* Reducir espaciado */
-        }
-        header img {
-            max-width: 100px; /* Reducir el tamaño del logo */
-        }
-        h1 {
-            font-size: 24px; /* Reducir el tamaño del título */
-            margin: 10px 0; /* Reducir márgenes */
-            color: #ff6347;
-            font-weight: bold;
-        }
-        .menu-sections {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px; /* Reducir la separación entre columnas */
-        }
-        .menu-section {
-            flex: 1;
-        }
-        .menu-section h2 {
-            font-size: 20px; /* Reducir el tamaño de los títulos de secciones */
-            color: #333;
-            border-bottom: 1px solid #ff6347; /* Línea más delgada */
-            padding-bottom: 5px; /* Reducir espaciado */
-            margin-bottom: 10px; /* Reducir espaciado */
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0; /* Reducir el padding */
-            font-size: 14px; /* Reducir el tamaño de la fuente */
-            border-bottom: 1px solid #ddd;
-        }
-        .menu-item strong {
-            color: #333;
-        }
-        .menu-item img {
-            width: 16px; /* Reducir el tamaño del símbolo de euro */
-            vertical-align: middle;
-        }
-        .pizzicas-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px; /* Reducir el gap entre las columnas de Pizzicas */
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px; /* Reducir espaciado */
-            font-size: 12px; /* Reducir el tamaño de la fuente en el footer */
-            color: #666;
-        }
-        footer img {
-            width: 100px; /* Reducir el tamaño del QR */
-            margin-top: 10px; /* Reducir margen */
-        }
-        .buttons {
-            margin-top: 20px; /* Reducir espaciado */
-            text-align: center;
-        }
-        .buttons button {
-            padding: 8px 20px; /* Reducir el padding de los botones */
-            font-size: 14px; /* Reducir el tamaño de los botones */
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .buttons button:hover {
-            background-color: #e5533c;
-        }
-    </style>
-</head>
-<body>
+        
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 5px; /* Reducir márgenes */
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
+.container {
+    max-width: 900px; /* Mantener el ancho máximo */
+    margin: 0 auto;
+    padding: 5px; /* Reducir el padding interno */
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 5px; /* Reducir espacio debajo del header */
+}
+
+header img {
+    max-width: 60px; /* Reducir el tamaño del logo */
+}
+
+h1 {
+    font-size: 18px; /* Reducir el tamaño del título */
+    margin: 5px 0; /* Reducir márgenes */
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.menu-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px; /* Reducir el espacio entre columnas */
+}
+
+.menu-section {
+    flex: 1;
+}
+
+.menu-section h2 {
+    font-size: 16px; /* Reducir tamaño de encabezados de sección */
+    color: #333;
+    border-bottom: 1px solid #ff6347;
+    padding-bottom: 5px;
+    margin-bottom: 5px; /* Reducir margen inferior */
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0; /* Reducir el espacio entre los ítems */
+    font-size: 10px; /* Reducir el tamaño de la fuente */
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-item strong {
+    color: #333;
+}
+
+.menu-item img {
+    width: 10px; /* Reducir el tamaño del símbolo de euro */
+    vertical-align: middle;
+}
+
+.pizzicas-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px; /* Reducir el espacio entre las columnas */
+}
+
+footer {
+    text-align: center;
+    margin-top: 5px; /* Reducir el espacio superior */
+    font-size: 9px; /* Reducir el tamaño de la fuente */
+    color: #666;
+}
+
+footer img {
+    width: 60px; /* Reducir el tamaño del QR */
+    margin-top: 5px;
+}
+
+.buttons {
+    margin-top: 5px; /* Reducir el espacio superior */
+    text-align: center;
+}
+
+.buttons button {
+    padding: 5px 10px; /* Reducir el tamaño de los botones */
+    font-size: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #e5533c;
+}
 <div class="container">
     <header>
         <img src="logo_noninapizzicas.png" alt="Logo Pizzería">
