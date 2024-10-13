@@ -38,9 +38,9 @@
         }
 
         .menu-sections {
-            display: flex;
-            justify-content: space-between;
-            gap: 5px; /* Reducir el espacio entre columnas */
+            display: grid;
+            grid-template-columns: 2fr 2fr 1fr; /* Dos columnas más amplias para las pizzicas y una más estrecha para PizzaDillos y Entrantes */
+            gap: 5px; /* Espacio entre las columnas */
         }
 
         .menu-section {
@@ -70,12 +70,6 @@
         .menu-item img {
             width: 10px; /* Reducir el tamaño del símbolo de euro */
             vertical-align: middle;
-        }
-
-        .pizzicas-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3px; /* Reducir el espacio entre las columnas */
         }
 
         footer {
