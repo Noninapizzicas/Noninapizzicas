@@ -7,15 +7,15 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 5px; /* Reducir márgenes */
+            margin: 10px;
             padding: 0;
             background-color: #f0f0f0;
         }
 
         .container {
-            max-width: 900px; /* Mantener el ancho máximo */
+            max-width: 1200px; /* Aumentar el ancho máximo para aprovechar mejor el espacio */
             margin: 0 auto;
-            padding: 5px; /* Reducir el padding interno */
+            padding: 20px;
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -23,43 +23,39 @@
 
         header {
             text-align: center;
-            padding-bottom: 5px; /* Reducir espacio debajo del header */
+            padding-bottom: 10px;
         }
 
         header img {
-            max-width: 60px; /* Reducir el tamaño del logo */
+            max-width: 70px;
         }
 
         h1 {
-            font-size: 18px; /* Reducir el tamaño del título */
-            margin: 5px 0; /* Reducir márgenes */
+            font-size: 24px;
+            margin: 5px 0;
             color: #ff6347;
             font-weight: bold;
         }
 
         .menu-sections {
             display: grid;
-            grid-template-columns: 2fr 2fr 1fr; /* Dos columnas más amplias para las pizzicas y una más estrecha para PizzaDillos y Entrantes */
-            gap: 5px; /* Espacio entre las columnas */
-        }
-
-        .menu-section {
-            flex: 1;
+            grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales para aprovechar mejor el espacio */
+            gap: 20px; /* Espacio entre columnas */
         }
 
         .menu-section h2 {
-            font-size: 16px; /* Reducir tamaño de encabezados de sección */
+            font-size: 18px; /* Aumentar el tamaño de encabezados de sección */
             color: #333;
-            border-bottom: 1px solid #ff6347;
-            padding-bottom: 5px;
-            margin-bottom: 5px; /* Reducir margen inferior */
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .menu-item {
             display: flex;
             justify-content: space-between;
-            padding: 2px 0; /* Reducir el espacio entre los ítems */
-            font-size: 10px; /* Reducir el tamaño de la fuente */
+            padding: 5px 0;
+            font-size: 14px; /* Aumentar el tamaño de la fuente */
             border-bottom: 1px solid #ddd;
         }
 
@@ -68,30 +64,30 @@
         }
 
         .menu-item img {
-            width: 10px; /* Reducir el tamaño del símbolo de euro */
+            width: 12px; /* Ajustar el tamaño del símbolo de euro */
             vertical-align: middle;
         }
 
         footer {
             text-align: center;
-            margin-top: 5px; /* Reducir el espacio superior */
-            font-size: 9px; /* Reducir el tamaño de la fuente */
+            margin-top: 20px;
+            font-size: 12px;
             color: #666;
         }
 
         footer img {
-            width: 60px; /* Reducir el tamaño del QR */
-            margin-top: 5px;
+            width: 80px; /* Ajustar el tamaño del QR */
+            margin-top: 10px;
         }
 
         .buttons {
-            margin-top: 5px; /* Reducir el espacio superior */
+            margin-top: 20px;
             text-align: center;
         }
 
         .buttons button {
-            padding: 5px 10px; /* Reducir el tamaño de los botones */
-            font-size: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
             background-color: #ff6347;
             color: white;
             border: none;
@@ -106,98 +102,96 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="logo_noninapizzicas.png" alt="Logo Pizzería">
-            <h1>NO NI NÁ Pizzicas</h1>
-        </header>
 
-        <div class="menu-sections">
-            <div class="menu-section pizzicas-columns">
-                <!-- Pizzicas: primera columna -->
-                <div>
-                    <h2>Pizzicas (1/2)</h2>
-                    <div id="menu-pizzicas-1"></div>
-                </div>
-                <!-- Pizzicas: segunda columna -->
-                <div>
-                    <h2>Pizzicas (2/2)</h2>
-                    <div id="menu-pizzicas-2"></div>
-                </div>
-            </div>
-            
-            <div class="menu-section">
-                <!-- PizzaDillos y Entrantes en la tercera columna -->
-                <h2>PizzaDillos</h2>
-                <div id="menu-pizzadillos"></div>
-                
-                <h2>Entrantes</h2>
-                <div id="menu-entrantes"></div>
-            </div>
+<div class="container">
+    <header>
+        <img src="logo_noninapizzicas.png" alt="Logo Pizzería">
+        <h1>NO NI NÁ Pizzicas</h1>
+    </header>
+
+    <div class="menu-sections">
+        <div class="menu-section">
+            <h2>Pizzicas (1/2)</h2>
+            <div id="menu-pizzicas-1"></div>
         </div>
-
-        <footer>
-            Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
-            <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">
-                Haz tu pedido online
-            </a>
-            <br>
-            <img src="qr_code_noninapizzicas.png" alt="QR para pedidos">
-        </footer>
         
-        <div class="buttons">
-            <button onclick="window.print()">Imprimir</button>
-            <button onclick="downloadPDF()">Descargar PDF</button>
+        <div class="menu-section">
+            <h2>Pizzicas (2/2)</h2>
+            <div id="menu-pizzicas-2"></div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>PizzaDillos</h2>
+            <div id="menu-pizzadillos"></div>
+            
+            <h2>Entrantes</h2>
+            <div id="menu-entrantes"></div>
         </div>
     </div>
 
-    <script>
-      // Cargar el menú desde el archivo JSON
-      fetch('menu.json')
-        .then(response => response.json())
-        .then(data => {
-          let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
-          let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
-          let menuPizzadillos = document.getElementById('menu-pizzadillos');
-          let menuEntrantes = document.getElementById('menu-entrantes');
+    <footer>
+        Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
+        <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">
+            Haz tu pedido online
+        </a>
+        <br>
+        <img src="qr_code_noninapizzicas.png" alt="QR para pedidos">
+    </footer>
+    
+    <div class="buttons">
+        <button onclick="window.print()">Imprimir</button>
+        <button onclick="downloadPDF()">Descargar PDF</button>
+    </div>
+</div>
 
-          // Dividir las Pizzicas en dos columnas
-          const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
-          const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
-          const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
+<script>
+  // Cargar el menú desde el archivo JSON
+  fetch('menu.json')
+    .then(response => response.json())
+    .then(data => {
+      let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
+      let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
+      let menuPizzadillos = document.getElementById('menu-pizzadillos');
+      let menuEntrantes = document.getElementById('menu-entrantes');
 
-          // Cargar las Pizzicas en la primera columna
-          pizzicasColumna1.forEach(item => {
-            menuPizzicas1.innerHTML += `<div class="menu-item">
-                                          <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
-                                        </div>`;
-          });
+      // Dividir las Pizzicas en dos columnas
+      const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
+      const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
+      const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
 
-          // Cargar las Pizzicas en la segunda columna
-          pizzicasColumna2.forEach(item => {
-            menuPizzicas2.innerHTML += `<div class="menu-item">
-                                          <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
-                                        </div>`;
-          });
+      // Cargar las Pizzicas en la primera columna
+      pizzicasColumna1.forEach(item => {
+        menuPizzicas1.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
 
-          // Cargar PizzaDillos
-          data.pizzadillos.forEach(item => {
-            menuPizzadillos.innerHTML += `<div class="menu-item">
-                                            <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                                            <span><img src="euro.png" alt="euro"> ${item.price}</span>
-                                          </div>`;
-          });
+      // Cargar las Pizzicas en la segunda columna
+      pizzicasColumna2.forEach(item => {
+        menuPizzicas2.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
 
-          // Cargar Entrantes
-          data.entrantes.forEach(item => {
-            menuEntrantes.innerHTML += `<div class="menu-item">
-                                          <span><strong>${item.name}</strong>: ${item.ingredients}</span>
-                                          <span><img src="euro.png" alt="euro"> ${item.price}</span>
-                                        </div>`;
-          });
-        });
-    </script>
+      // Cargar PizzaDillos
+      data.pizzadillos.forEach(item => {
+        menuPizzadillos.innerHTML += `<div class="menu-item">
+                                        <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                        <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                      </div>`;
+      });
+
+      // Cargar Entrantes
+      data.entrantes.forEach(item => {
+        menuEntrantes.innerHTML += `<div class="menu-item">
+                                      <span><strong>${item.name}</strong>: ${item.ingredients}</span>
+                                      <span><img src="euro.png" alt="euro"> ${item.price}</span>
+                                    </div>`;
+      });
+    });
+</script>
+
 </body>
 </html>
