@@ -156,18 +156,20 @@
         <button onclick="downloadImage()">Descargar Imagen</button>
     </div>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   // Cargar el menú desde el archivo JSON
   fetch('./menu.json')
     .then(response => {
+      console.log("Verificando si se obtuvo respuesta del JSON"); // Verificación
       if (!response.ok) {
         throw new Error('Error al cargar el archivo JSON');
       }
+      console.log("JSON cargado con éxito"); // Diagnóstico si funciona
       return response.json();
     })
     .then(data => {
+      console.log("Datos recibidos del JSON:", data); // Mostrar los datos en la consola
       let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
       let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
       let menuPizzadillos = document.getElementById('menu-pizzadillos');
@@ -230,4 +232,20 @@
       const ctx = a4Canvas.getContext('2d');
       
       // Ajustamos el contenido de la imagen dentro del tamaño A4
-      ctx.drawImage(canvas,
+      ctx.drawImage(canvas, 0, 0, 794, 1123);
+
+      // Descargar la imagen como PNG
+      let link = document.createElement('a');
+      link.download = 'menu_pizzicas_A4.png';
+      link.href = a4Canvas.toDataURL();
+      link.click();
+    });
+  }
+
+  function downloadPDF() {
+    // Aquí iría la lógica para la descarga del PDF
+  }
+</script>
+
+</body>
+</html>
