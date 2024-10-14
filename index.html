@@ -160,8 +160,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   // Cargar el menú desde el archivo JSON
-  fetch('menu.json')
-    .then(response => response.json())
+  fetch('./menu.json')  // Asegúrate de que el archivo JSON esté en la misma carpeta que este HTML
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error al cargar el archivo JSON');
+      }
+      return response.json();
+    })
     .then(data => {
       let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
       let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
@@ -203,6 +208,9 @@
                                       <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
                                     </div>`;
       });
+    })
+    .catch(error => {
+      console.error('Error al cargar el menú:', error);
     });
 
   // Función para descargar la imagen ajustada a A4
@@ -223,3 +231,19 @@
       
       // Ajustamos el contenido de la imagen dentro del tamaño A4
       ctx.drawImage(canvas, 0, 0, 794, 1123);
+
+      // Descargar la imagen como PNG
+      let link = document.createElement('a');
+      link.download = 'menu_pizzicas_A4.png';
+      link.href = a4Canvas.toDataURL();
+      link.click();
+    });
+  }
+
+  function downloadPDF() {
+    // Aquí iría la lógica para la descarga del PDF
+  }
+</script>
+
+</body>
+</html>
