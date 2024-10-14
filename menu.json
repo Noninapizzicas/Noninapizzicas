@@ -26,11 +26,13 @@
     { "name": "Soul", "ingredients": "Tomate, Queso, Peperoni, Bacon, Champiñones", "price": "9.50" },
     { "name": "Punk", "ingredients": "Tomate, Queso, Jamón York, Atún, Olivas negras, Maíz", "price": "9.50" },
     { "name": "Hip-Hop", "ingredients": "Tomate, Queso, Carne, Bacon, Peperoni, Salsa Vitorino", "price": "10.00" },
-    { "name": "Trap", "ingredients": "Tomate, Queso, Peperoni, Nata, Maíz, Pimiento verde", "price": "9.50" }
+    { "name": "Trap", "ingredients": "Tomate, Queso, Peperoni, Nata, Maíz, Pimiento verde", "price": "9.50" },
+    { "name": "Swing", "ingredients": "Crema de champiñones, Nata, Pimienta, Queso azul, York, Mezcla de quesos", "price": "10.00" }
   ],
   "pizzadillos": [
     { "name": "Aneto", "ingredients": "Pollo, Pepinillos, Mayonesa", "price": "6.00" },
-    { "name": "Tibidabo", "ingredients": "Jamón Serrano, Tomate triturado, Sal, Aceite, Toque de ajo", "price": "5.00" }
+    { "name": "Tibidabo", "ingredients": "Jamón Serrano, Tomate triturado, Sal, Aceite, Toque de ajo", "price": "5.00" },
+    { "name": "Machu Picchu", "ingredients": "Ternera, Pimientos de padrón encurtidos, Crema de queso manchego", "price": "7.00" }
   ],
   "entrantes": [
     { "name": "Huevos Salseros", "ingredients": "Huevos, Salsa de ajo asado, trufa y mayonesa", "price": "3.50" }
