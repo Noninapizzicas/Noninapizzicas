@@ -50,7 +50,7 @@
         .menu-sections {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
+            gap: 30px; /* Aumentar el espacio entre columnas */
         }
 
         .menu-section {
@@ -160,7 +160,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
   // Cargar el menú desde el archivo JSON
-  fetch('./menu.json')  // Asegúrate de que el archivo JSON esté en la misma carpeta que este HTML
+  fetch('./menu.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error al cargar el archivo JSON');
