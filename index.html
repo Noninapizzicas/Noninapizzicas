@@ -50,7 +50,7 @@
         .menu-sections {
             display: flex;
             justify-content: space-between;
-            gap: 30px; /* Aumentar el espacio entre columnas */
+            gap: 10px; /* Reducir el espacio entre columnas */
         }
 
         .menu-section {
@@ -69,7 +69,7 @@
             display: flex;
             justify-content: space-between;
             padding: 2px 0;
-            font-size: 11px;
+            font-size: 12px; /* Aumentar ligeramente el tamaño del texto */
             border-bottom: 1px solid #ddd;
             flex-direction: column;
         }
@@ -82,7 +82,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            margin-top: -10px; /* Ajustar el precio más cerca de los ingredientes */
+            margin-top: -8px; /* Ajustar el precio más cerca de los ingredientes */
         }
 
         .menu-item img {
@@ -230,20 +230,4 @@
       const ctx = a4Canvas.getContext('2d');
       
       // Ajustamos el contenido de la imagen dentro del tamaño A4
-      ctx.drawImage(canvas, 0, 0, 794, 1123);
-
-      // Descargar la imagen como PNG
-      let link = document.createElement('a');
-      link.download = 'menu_pizzicas_A4.png';
-      link.href = a4Canvas.toDataURL();
-      link.click();
-    });
-  }
-
-  function downloadPDF() {
-    // Aquí iría la lógica para la descarga del PDF
-  }
-</script>
-
-</body>
-</html>
+      ctx.drawImage(canvas,
