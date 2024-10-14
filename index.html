@@ -5,123 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NO NI NÁ Pizzicas</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 5px;
+    padding: 0;
+    background-color: #f0f0f0;
+}
 
-        .container {
-            max-width: 794px; /* Ancho de A4 en píxeles */
-            margin: 0 auto;
-            padding: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            height: 1123px; /* Alto de A4 en píxeles */
-            box-sizing: border-box;
-        }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
-        header {
-            text-align: center;
-            padding-bottom: 10px;
-            position: relative;
-        }
+header {
+    text-align: center;
+    padding-bottom: 5px;
+    position: relative;
+}
 
-        header img.logo {
-            max-width: 60px;
-        }
+header img.logo {
+    max-width: 60px;
+}
 
-        header img.qr {
-            position: absolute;
-            right: 10px;
-            top: 0;
-            width: 60px;
-        }
+header img.qr {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 60px;
+}
 
-        h1 {
-            font-size: 20px;
-            margin: 5px 0;
-            color: #ff6347;
-            font-weight: bold;
-        }
+h1 {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #ff6347;
+    font-weight: bold;
+}
 
-        .menu-sections {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px; /* Reducir el espacio entre columnas */
-        }
+.menu-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 
-        .menu-section {
-            flex: 1;
-        }
+.menu-section {
+    flex: 1;
+}
 
-        .menu-section h2 {
-            font-size: 16px;
-            color: #333;
-            border-bottom: 2px solid #ff6347;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
+.menu-section h2 {
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ff6347;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
 
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 2px 0;
-            font-size: 12px; /* Aumentar ligeramente el tamaño del texto */
-            border-bottom: 1px solid #ddd;
-            flex-direction: column;
-        }
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 10px;
+    border-bottom: 1px solid #ddd;
+    flex-direction: column;
+}
 
-        .menu-item strong {
-            color: #333;
-        }
+.menu-item strong {
+    color: #333;
+}
 
-        .menu-item span.price {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-top: -8px; /* Ajustar el precio más cerca de los ingredientes */
-        }
+.menu-item span.price {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-        .menu-item img {
-            width: 10px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
+.menu-item img {
+    width: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
 
-        footer {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 11px;
-            color: #666;
-        }
+footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #666;
+}
 
-        .buttons {
-            margin-top: 10px;
-            text-align: center;
-        }
+.buttons {
+    margin-top: 10px;
+    text-align: center;
+}
 
-        .buttons button {
-            padding: 5px 10px;
-            font-size: 12px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
+.buttons button {
+    padding: 5px 10px;
+    font-size: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-        .buttons button:hover {
-            background-color: #e5533c;
-        }
+.buttons button:hover {
+    background-color: #e5533c;
+}
     </style>
 </head>
 <body>
 
-<div class="container" id="menuContainer">
+<div class="container">
     <header>
         <img src="logo_noninapizzicas.png" alt="Logo Pizzería" class="logo">
         <h1>NO NI NÁ Pizzicas</h1>
@@ -153,23 +150,20 @@
     <div class="buttons">
         <button onclick="window.print()">Imprimir</button>
         <button onclick="downloadPDF()">Descargar PDF</button>
-        <button onclick="downloadImage()">Descargar Imagen</button>
+        <button onclick="convertPdfToPng()">Descargar como PNG</button>
     </div>
+
+    <canvas id="pdf-canvas" style="display:none;"></canvas>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Incluir PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
+
 <script>
   // Cargar el menú desde el archivo JSON
-  fetch('./menu.json')
-    .then(response => {
-      console.log("Verificando si se obtuvo respuesta del JSON"); // Verificación
-      if (!response.ok) {
-        throw new Error('Error al cargar el archivo JSON');
-      }
-      console.log("JSON cargado con éxito"); // Diagnóstico si funciona
-      return response.json();
-    })
+  fetch('menu.json')
+    .then(response => response.json())
     .then(data => {
-      console.log("Datos recibidos del JSON:", data); // Mostrar los datos en la consola
       let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
       let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
       let menuPizzadillos = document.getElementById('menu-pizzadillos');
@@ -210,40 +204,42 @@
                                       <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
                                     </div>`;
       });
-    })
-    .catch(error => {
-      console.error('Error al cargar el menú:', error);
     });
 
-  // Función para descargar la imagen ajustada a A4
-  function downloadImage() {
-    const menuContainer = document.querySelector("#menuContainer");
+  // Convertir PDF a PNG usando PDF.js
+  function convertPdfToPng() {
+    var pdfUrl = 'tu_archivo.pdf'; // Ruta del archivo PDF
 
-    // Ajuste de proporciones a A4
-    html2canvas(menuContainer, { 
-      scale: 2, // Aumentamos la escala para una mayor calidad
-      width: 794, // Ancho en píxeles de A4
-      height: 1123 // Alto en píxeles de A4
-    }).then(canvas => {
-      // Redimensionamos el canvas a tamaño A4
-      const a4Canvas = document.createElement('canvas');
-      a4Canvas.width = 794;
-      a4Canvas.height = 1123;
-      const ctx = a4Canvas.getContext('2d');
-      
-      // Ajustamos el contenido de la imagen dentro del tamaño A4
-      ctx.drawImage(canvas, 0, 0, 794, 1123);
+    var canvas = document.getElementById('pdf-canvas');
+    var ctx = canvas.getContext('2d');
 
-      // Descargar la imagen como PNG
-      let link = document.createElement('a');
-      link.download = 'menu_pizzicas_A4.png';
-      link.href = a4Canvas.toDataURL();
-      link.click();
+    // Cargar el PDF usando PDF.js
+    pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+      pdf.getPage(1).then(function(page) {
+        var scale = 2; // Escala para mejorar la calidad de la imagen
+        var viewport = page.getViewport({ scale: scale });
+
+        // Tamaño del canvas para la página del PDF
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+
+        page.render(renderContext).promise.then(function() {
+          // Convertir canvas a imagen PNG
+          var imgData = canvas.toDataURL('image/png');
+
+          // Crear un enlace de descarga
+          var link = document.createElement('a');
+          link.href = imgData;
+          link.download = 'menu_pizzicas.png';
+          link.click();
+        });
+      });
     });
-  }
-
-  function downloadPDF() {
-    // Aquí iría la lógica para la descarga del PDF
   }
 </script>
 
