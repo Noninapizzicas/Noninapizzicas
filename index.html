@@ -15,7 +15,7 @@
         .container {
             max-width: 794px; /* Ancho de A4 en píxeles */
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -30,18 +30,18 @@
         }
 
         header img.logo {
-            max-width: 80px;
+            max-width: 60px;
         }
 
         header img.qr {
             position: absolute;
             right: 10px;
             top: 0;
-            width: 80px;
+            width: 60px;
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 20px;
             margin: 5px 0;
             color: #ff6347;
             font-weight: bold;
@@ -58,7 +58,7 @@
         }
 
         .menu-section h2 {
-            font-size: 18px;
+            font-size: 16px;
             color: #333;
             border-bottom: 2px solid #ff6347;
             padding-bottom: 5px;
@@ -68,8 +68,8 @@
         .menu-item {
             display: flex;
             justify-content: space-between;
-            padding: 5px 0;
-            font-size: 12px;
+            padding: 2px 0;
+            font-size: 11px;
             border-bottom: 1px solid #ddd;
             flex-direction: column;
         }
@@ -82,28 +82,29 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            margin-top: -10px; /* Ajustar el precio más cerca de los ingredientes */
         }
 
         .menu-item img {
-            width: 12px;
+            width: 10px;
             margin-left: 5px;
             vertical-align: middle;
         }
 
         footer {
             text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
+            margin-top: 10px;
+            font-size: 11px;
             color: #666;
         }
 
         .buttons {
-            margin-top: 20px;
+            margin-top: 10px;
             text-align: center;
         }
 
         .buttons button {
-            padding: 10px 20px;
+            padding: 5px 10px;
             font-size: 12px;
             background-color: #ff6347;
             color: white;
@@ -222,19 +223,3 @@
       
       // Ajustamos el contenido de la imagen dentro del tamaño A4
       ctx.drawImage(canvas, 0, 0, 794, 1123);
-
-      // Descargar la imagen como PNG
-      let link = document.createElement('a');
-      link.download = 'menu_pizzicas_A4.png';
-      link.href = a4Canvas.toDataURL();
-      link.click();
-    });
-  }
-
-  function downloadPDF() {
-    // Aquí iría la lógica para la descarga del PDF
-  }
-</script>
-
-</body>
-</html>
