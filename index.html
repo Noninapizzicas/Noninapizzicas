@@ -202,11 +202,15 @@
       });
     });
 
-  // Función para descargar la imagen
+  // Función para descargar la imagen ajustada a A4
   function downloadImage() {
-    html2canvas(document.querySelector("#menuContainer")).then(canvas => {
+    html2canvas(document.querySelector("#menuContainer"), { 
+      scale: 3, // Aumentamos la escala para una mayor calidad
+      width: 794, // Ajuste para tamaño A4 en píxeles (ancho)
+      height: 1123 // Ajuste para tamaño A4 en píxeles (alto)
+    }).then(canvas => {
       let link = document.createElement('a');
-      link.download = 'menu_pizzicas.png';
+      link.download = 'menu_pizzicas_A4.png';
       link.href = canvas.toDataURL();
       link.click();
     });
