@@ -5,125 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NO NI NÁ Pizzicas</title>
     <style>
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 5px;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 5px;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-header {
-    text-align: center;
-    padding-bottom: 5px;
-    position: relative;
-}
+        h1 {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #ff6347;
+            font-weight: bold;
+            text-align: center;
+        }
 
-header img.logo {
-    max-width: 60px;
-}
+        .menu-sections {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
 
-header img.qr {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    width: 60px;
-}
+        .menu-section {
+            flex: 1;
+        }
 
-h1 {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #ff6347;
-    font-weight: bold;
-}
+        .menu-section h2 {
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #ff6347;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
 
-.menu-sections {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 10px;
+            border-bottom: 1px solid #ddd;
+            flex-direction: column;
+        }
 
-.menu-section {
-    flex: 1;
-}
+        .menu-item strong {
+            color: #333;
+        }
 
-.menu-section h2 {
-    font-size: 16px;
-    color: #333;
-    border-bottom: 1px solid #ff6347;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
+        .menu-item span.price {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
 
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 10px;
-    border-bottom: 1px solid #ddd;
-    flex-direction: column;
-}
+        .menu-item img {
+            width: 10px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
 
-.menu-item strong {
-    color: #333;
-}
+        .buttons {
+            margin-top: 10px;
+            text-align: center;
+        }
 
-.menu-item span.price {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+        .buttons button {
+            padding: 5px 10px;
+            font-size: 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.menu-item img {
-    width: 10px;
-    margin-left: 5px;
-    vertical-align: middle;
-}
-
-footer {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 10px;
-    color: #666;
-}
-
-.buttons {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.buttons button {
-    padding: 5px 10px;
-    font-size: 10px;
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.buttons button:hover {
-    background-color: #e5533c;
-}
+        .buttons button:hover {
+            background-color: #e5533c;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
-        <img src="logo_noninapizzicas.png" alt="Logo Pizzería" class="logo">
-        <h1>NO NI NÁ Pizzicas</h1>
-        <img src="qr_code_noninapizzicas.png" alt="QR para pedidos" class="qr">
-    </header>
+    <h1>NO NI NÁ Pizzicas</h1>
 
     <div class="menu-sections">
         <div class="menu-section">
@@ -142,22 +115,11 @@ footer {
         </div>
     </div>
 
-    <footer>
-        Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
-        <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">Haz tu pedido online</a>
-    </footer>
-    
     <div class="buttons">
         <button onclick="window.print()">Imprimir</button>
         <button onclick="downloadPDF()">Descargar PDF</button>
-        <button onclick="convertPdfToPng()">Descargar como PNG</button>
     </div>
-
-    <canvas id="pdf-canvas" style="display:none;"></canvas>
 </div>
-
-<!-- Incluir PDF.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
 
 <script>
   // Cargar el menú desde el archivo JSON
@@ -205,42 +167,6 @@ footer {
                                     </div>`;
       });
     });
-
-  // Convertir PDF a PNG usando PDF.js
-  function convertPdfToPng() {
-    var pdfUrl = 'tu_archivo.pdf'; // Ruta del archivo PDF
-
-    var canvas = document.getElementById('pdf-canvas');
-    var ctx = canvas.getContext('2d');
-
-    // Cargar el PDF usando PDF.js
-    pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
-      pdf.getPage(1).then(function(page) {
-        var scale = 2; // Escala para mejorar la calidad de la imagen
-        var viewport = page.getViewport({ scale: scale });
-
-        // Tamaño del canvas para la página del PDF
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-
-        var renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-
-        page.render(renderContext).promise.then(function() {
-          // Convertir canvas a imagen PNG
-          var imgData = canvas.toDataURL('image/png');
-
-          // Crear un enlace de descarga
-          var link = document.createElement('a');
-          link.href = imgData;
-          link.download = 'menu_pizzicas.png';
-          link.click();
-        });
-      });
-    });
-  }
 </script>
 
 </body>
