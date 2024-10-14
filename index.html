@@ -5,201 +5,226 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NO NI NÁ Pizzicas</title>
     <style>
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 5px;
-    padding: 0;
-    background-color: #f0f0f0;
-}
+        /* Agregar el fondo en todo momento, incluyendo la impresión */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 5px;
+            padding: 0;
+            background-image: url('nombre_de_la_imagen.jpg'); /* Coloca aquí la ruta correcta de la imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco semi-transparente */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-header {
-    text-align: center;
-    padding-bottom: 5px;
-    position: relative;
-}
+        header {
+            text-align: center;
+            padding-bottom: 5px; /* Reducir espacio debajo del header */
+        }
 
-header img.logo {
-    max-width: 60px;
-}
+        header img {
+            max-width: 60px; /* Reducir el tamaño del logo */
+        }
 
-header img.qr {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    width: 60px;
-}
+        h1 {
+            font-size: 18px; /* Reducir el tamaño del título */
+            margin: 5px 0; /* Reducir márgenes */
+            color: #ff6347;
+            font-weight: bold;
+        }
 
-h1 {
-    font-size: 18px;
-    margin: 5px 0;
-    color: #ff6347;
-    font-weight: bold;
-}
+        .menu-sections {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px; /* Reducir el espacio entre columnas */
+        }
 
-.menu-sections {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
+        .menu-section {
+            flex: 1;
+        }
 
-.menu-section {
-    flex: 1;
-}
+        .menu-section h2 {
+            font-size: 16px; /* Reducir tamaño de encabezados de sección */
+            color: #333;
+            border-bottom: 1px solid #ff6347;
+            padding-bottom: 5px;
+            margin-bottom: 5px; /* Reducir margen inferior */
+        }
 
-.menu-section h2 {
-    font-size: 16px;
-    color: #333;
-    border-bottom: 1px solid #ff6347;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0; /* Reducir el espacio entre los ítems */
+            font-size: 10px; /* Reducir el tamaño de la fuente */
+            border-bottom: 1px solid #ddd;
+        }
 
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 10px;
-    border-bottom: 1px solid #ddd;
-    flex-direction: column; /* Para que el nombre y los ingredientes estén en líneas separadas */
-}
+        .menu-item strong {
+            color: #333;
+        }
 
-.menu-item strong {
-    color: #333;
-}
+        .menu-item img {
+            width: 10px; /* Reducir el tamaño del símbolo de euro */
+            vertical-align: middle;
+        }
 
-.menu-item span.price {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
+        .pizzicas-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px; /* Reducir el espacio entre las columnas */
+        }
 
-.menu-item img {
-    width: 10px;
-    margin-left: 5px; /* Espacio entre el precio y el icono del euro */
-    vertical-align: middle;
-}
+        footer {
+            text-align: center;
+            margin-top: 5px; /* Reducir el espacio superior */
+            font-size: 9px; /* Reducir el tamaño de la fuente */
+            color: #666;
+        }
 
-footer {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 10px;
-    color: #666;
-}
+        footer img {
+            width: 60px; /* Reducir el tamaño del QR */
+            margin-top: 5px;
+        }
 
-.buttons {
-    margin-top: 10px;
-    text-align: center;
-}
+        .buttons {
+            margin-top: 5px; /* Reducir el espacio superior */
+            text-align: center;
+        }
 
-.buttons button {
-    padding: 5px 10px;
-    font-size: 10px;
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        .buttons button {
+            padding: 5px 10px; /* Reducir el tamaño de los botones */
+            font-size: 10px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.buttons button:hover {
-    background-color: #e5533c;
-}
+        .buttons button:hover {
+            background-color: #e5533c;
+        }
+
+        /* Asegurarse de que el fondo se imprima */
+        @media print {
+            body {
+                background-image: url('nombre_de_la_imagen.jpg'); /* Asegura que el fondo también esté al imprimir */
+                -webkit-print-color-adjust: exact;  /* Safari/Chrome */
+                print-color-adjust: exact;          /* Firefox */
+            }
+
+            .container {
+                background-color: rgba(255, 255, 255, 0.8);  /* Fondo semi-transparente para mejor legibilidad */
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <img src="logo_noninapizzicas.png" alt="Logo Pizzería">
+            <h1>NO NI NÁ Pizzicas</h1>
+        </header>
 
-<div class="container">
-    <header>
-        <img src="logo_noninapizzicas.png" alt="Logo Pizzería" class="logo">
-        <h1>NO NI NÁ Pizzicas</h1>
-        <img src="qr_code_noninapizzicas.png" alt="QR para pedidos" class="qr">
-    </header>
+        <div class="menu-sections">
+            <div class="menu-section pizzicas-columns">
+                <!-- Pizzicas: primera columna -->
+                <div>
+                    <h2>Pizzicas (1/2)</h2>
+                    <div id="menu-pizzicas-1"></div>
+                </div>
+                <!-- Pizzicas: segunda columna -->
+                <div>
+                    <h2>Pizzicas (2/2)</h2>
+                    <div id="menu-pizzicas-2"></div>
+                </div>
+            </div>
 
-    <div class="menu-sections">
-        <div class="menu-section">
-            <h2>Pizzicas (1/2)</h2>
-            <div id="menu-pizzicas-1"></div>
+            <div class="menu-section">
+                <!-- PizzaDillos y Entrantes en la tercera columna -->
+                <h2>PizzaDillos</h2>
+                <div id="menu-pizzadillos"></div>
+
+                <h2>Entrantes</h2>
+                <div id="menu-entrantes"></div>
+            </div>
         </div>
-        <div class="menu-section">
-            <h2>Pizzicas (2/2)</h2>
-            <div id="menu-pizzicas-2"></div>
-        </div>
-        <div class="menu-section">
-            <h2>PizzaDillos</h2>
-            <div id="menu-pizzadillos"></div>
-            <h2>Entrantes</h2>
-            <div id="menu-entrantes"></div>
+
+        <footer>
+            Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
+            <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">
+                Haz tu pedido online
+            </a>
+            <br>
+            <img src="qr_code_noninapizzicas.png" alt="QR para pedidos">
+        </footer>
+
+        <div class="buttons">
+            <button onclick="window.print()">Imprimir</button>
+            <button onclick="downloadPDF()">Descargar PDF</button>
         </div>
     </div>
 
-    <footer>
-        Teléfono: +34 643 283 034 | Dirección: Juan Carlos I, 49, Lorca<br>
-        <a href="https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER">Haz tu pedido online</a>
-    </footer>
-    
-    <div class="buttons">
-        <button onclick="window.print()">Imprimir</button>
-        <button onclick="downloadPDF()">Descargar PDF</button>
-    </div>
-</div>
+    <script>
+        // Cargar el menú desde el archivo JSON
+        fetch('menu.json')
+        .then(response => response.json())
+        .then(data => {
+            let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
+            let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
+            let menuPizzadillos = document.getElementById('menu-pizzadillos');
+            let menuEntrantes = document.getElementById('menu-entrantes');
 
-<script>
-  // Cargar el menú desde el archivo JSON
-  fetch('menu.json')
-    .then(response => response.json())
-    .then(data => {
-      let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
-      let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
-      let menuPizzadillos = document.getElementById('menu-pizzadillos');
-      let menuEntrantes = document.getElementById('menu-entrantes');
+            // Dividir las Pizzicas en dos columnas
+            const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
+            const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
+            const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
 
-      const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
-      const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
-      const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
+            // Cargar las Pizzicas en la primera columna
+            pizzicasColumna1.forEach(item => {
+                menuPizzicas1.innerHTML += `<div class="menu-item">
+                                            <span><strong>${item.name}</strong></span>
+                                            <span>${item.ingredients}</span>
+                                            <span>${item.price} <img src="euro.png" alt="euro"></span>
+                                        </div>`;
+            });
 
-      pizzicasColumna1.forEach(item => {
-        menuPizzicas1.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
+            // Cargar las Pizzicas en la segunda columna
+            pizzicasColumna2.forEach(item => {
+                menuPizzicas2.innerHTML += `<div class="menu-item">
+                                            <span><strong>${item.name}</strong></span>
+                                            <span>${item.ingredients}</span>
+                                            <span>${item.price} <img src="euro.png" alt="euro"></span>
+                                        </div>`;
+            });
 
-      pizzicasColumna2.forEach(item => {
-        menuPizzicas2.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
+            // Cargar PizzaDillos
+            data.pizzadillos.forEach(item => {
+                menuPizzadillos.innerHTML += `<div class="menu-item">
+                                            <span><strong>${item.name}</strong></span>
+                                            <span>${item.ingredients}</span>
+                                            <span>${item.price} <img src="euro.png" alt="euro"></span>
+                                        </div>`;
+            });
 
-      data.pizzadillos.forEach(item => {
-        menuPizzadillos.innerHTML += `<div class="menu-item">
-                                        <span><strong>${item.name}</strong></span>
-                                        <span>${item.ingredients}</span>
-                                        <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                      </div>`;
-      });
-
-      data.entrantes.forEach(item => {
-        menuEntrantes.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
-    });
-</script>
-
+            // Cargar Entrantes
+            data.entrantes.forEach(item => {
+                menuEntrantes.innerHTML += `<div class="menu-item">
+                                            <span><strong>${item.name}</strong></span>
+                                            <span>${item.ingredients}</span>
+                                            <span>${item.price} <img src="euro.png" alt="euro"></span>
+                                        </div>`;
+            });
+        });
+    </script>
 </body>
 </html>
