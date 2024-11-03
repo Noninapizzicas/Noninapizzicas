@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas - NO NI NÁ Pizzicas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #ff6347;
+            text-align: center;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Pruebas de Funcionalidad - Amparo</h1>
+
+    <!-- Prueba de Comandos de Voz -->
+    <div class="section">
+        <h2>Prueba de Comandos de Voz</h2>
+        <button onclick="startVoiceTest()">Activar Comando de Voz</button>
+        <p id="voiceOutput">Diga "Amparo" seguido de su comando.</p>
+    </div>
+
+    <!-- Prueba de Subida de Archivos -->
+    <div class="section">
+        <h2>Prueba de Subida de Archivos</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadFile()">Subir y Interpretar Archivo</button>
+        <p id="fileOutput">Texto interpretado aparecerá aquí.</p>
+    </div>
+
+    <!-- Prueba de Navegación y Visualización de Datos -->
+    <div class="section">
+        <h2>Prueba de Visualización de Datos</h2>
+        <p>Aquí puedes mostrar datos ficticios o de ejemplo para probar la visualización.</p>
+        <!-- Añadir ejemplos de recetas, proveedores, etc. -->
+    </div>
+</div>
+
+<script>
+    // Función para probar el comando de voz
+    function startVoiceTest() {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = "es-ES";
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            document.getElementById('voiceOutput').innerText = "Comando de voz detectado: " + transcript;
+        };
+        recognition.start();
+    }
+
+    // Función para subir y procesar un archivo (simulada)
+    function uploadFile() {
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput.files.length > 0) {
+            // Aquí iría la lógica para enviar el archivo al backend para interpretación
+            document.getElementById('fileOutput').innerText = "Archivo subido y procesado (simulado)";
+        } else {
+            alert("Por favor, selecciona un archivo primero.");
+        }
+    }
+</script>
+
+</body>
+</html>
