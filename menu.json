@@ -1,32 +1,32 @@
 {
     "pizzicas": [
-        { "name": "Country", "ingredients": "Tomate, Salsa BBQ, Nata, Pollo, Mezcla de quesos, Cebolla, Bacon", "price": 11.00 },
-        { "name": "Cumbia", "ingredients": "Tomate, Mozzarella, Cebolla, Ternera, Mezcla de quesos, Piña, Salsa Vitorino", "price": 10.50 },
-        { "name": "R&B (Rhythm and Blues)", "ingredients": "Tomate, Carne de ternera, Bacon, Queso, Salsa BBQ", "price": 10.50 },
-        { "name": "Hip-Hop", "ingredients": "Tomate, Queso, Carne, Bacon, Peperoni, Salsa Vitorino", "price": 10.50 },
-        { "name": "Soul", "ingredients": "Tomate, Queso, Peperoni, Bacon, Champiñones", "price": 10.00 },
+        { "name": "Country", "ingredients": "Tomate, Salsa BBQ, Nata, Pollo, Mezcla de quesos, Cebolla, Bacon", "price": 10.50 },
+        { "name": "Cumbia", "ingredients": "Tomate, Mozzarella, Cebolla, Ternera, Mezcla de quesos, Piña, Salsa Vitorino", "price": 10.00 },
+        { "name": "R&B (Rhythm and Blues)", "ingredients": "Tomate, Carne de ternera, Bacon, Queso, Salsa BBQ", "price": 10.00 },
+        { "name": "Hip-Hop", "ingredients": "Tomate, Queso, Carne, Bacon, Peperoni, Salsa Vitorino", "price": 10.00 },
+        { "name": "Soul", "ingredients": "Tomate, Queso, Peperoni, Bacon, Champiñones", "price": 9.50 },
         { "name": "Ranchera", "ingredients": "Tomate, Mozzarella, Bacon, Cebolla, Salsa BBQ", "price": 9.50 },
         { "name": "Rockabilly", "ingredients": "Tomate, Mozzarella, Bacon, Cebolla, Nata", "price": 9.50 },
         { "name": "Indie", "ingredients": "Tomate, Mozzarella, York, Pepperoni", "price": 9.50 },
         { "name": "Milonga", "ingredients": "Tomate, Mozzarella, York", "price": 9.00 },
-        { "name": "Punk", "ingredients": "Tomate, Queso, Jamón York, Atún, Olivas negras, Maíz", "price": 10.50 },
+        { "name": "Punk", "ingredients": "Tomate, Queso, Jamón York, Atún, Olivas negras, Maíz", "price": 9.50 },
         { "name": "Bossa Nova", "ingredients": "Tomate, Mozzarella, Atún, Champiñón, Pimiento verde", "price": 10.00 },
         { "name": "Bachata", "ingredients": "Tomate, Mozzarella, Anchoas, Alcaparras, Cebolla, Olivas", "price": 9.50 },
         { "name": "Chillout", "ingredients": "Tomate, Mozzarella, Atún, Cebolla", "price": 9.50 },
         { "name": "Tango", "ingredients": "Tomate, Mozzarella, Atún, Cebolla, Olivas", "price": 9.50 },
-        { "name": "Swing", "ingredients": "Crema de champiñones, Nata, Pimienta, Queso azul, York, Mezcla de quesos", "price": 10.50 },
+        { "name": "Swing", "ingredients": "Crema de champiñones, Nata, Pimienta, Queso azul, York, Mezcla de quesos", "price": 10.00 },
         { "name": "Batucada", "ingredients": "Tomate, Mozzarella, Queso azul, Mezcla de quesos, Nata", "price": 9.50 },
         { "name": "Fandango", "ingredients": "Ajo, Mozzarella, Queso azul", "price": 8.50 },
-        { "name": "The Veggie Symphony", "ingredients": "Tomate, Mozzarella, Cebolla, Champiñón, Calabacín, Espárragos, Pimiento verde", "price": 10.00 },
+        { "name": "The Veggie Symphony", "ingredients": "Tomate, Mozzarella, Cebolla, Champiñón, Calabacín, Espárragos, Pimiento verde", "price": 9.50 },
         { "name": "Samba", "ingredients": "Tomate, Mozzarella, Albahaca", "price": 8.50 }
     ],
     "pizzadillos": [
-        { "name": "Aneto", "ingredients": "Pollo, Pepinillos, Mayonesa", "price": 6.50 },
-        { "name": "Tibidabo", "ingredients": "Jamón Serrano, Tomate triturado, Sal, Aceite, Toque de ajo", "price": 5.50 },
-        { "name": "Machu Picchu", "ingredients": "Ternera, Pimientos de padrón encurtidos, Crema de queso manchego", "price": 7.50 },
-        { "name": "El Veleta", "ingredients": "Atún, Cebolla, Salsa de mostaza", "price": 5.00 }
+        { "name": "Aneto", "ingredients": "Pollo, Pepinillos, Mayonesa", "price": 6.00 },
+        { "name": "Tibidabo", "ingredients": "Jamón Serrano, Tomate triturado, Sal, Aceite, Toque de ajo", "price": 5.00 },
+        { "name": "Machu Picchu", "ingredients": "Ternera, Pimientos de padrón encurtidos, Crema de queso manchego", "price": 7.00 },
+        { "name": "El Veleta", "ingredients": "Atún, Cebolla, Salsa de mostaza", "price": 4.50 }
     ],
     "entrantes": [
-        { "name": "Huevos Salseros", "ingredients": "Huevos, Salsa de ajo asado, trufa y mayonesa", "price": 4.00 }
+        { "name": "Huevos Salseros", "ingredients": "Huevos, Salsa de ajo asado, trufa y mayonesa", "price": 3.50 }
     ]
 }
