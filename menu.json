@@ -27,13 +27,8 @@
     {"name": "K-Pop", "ingredients": "Tomate 🍅, Mozzarella 🧀, York 🍖, Huevo 🥚", "price": "10.50"},
     {"name": "Flamenco", "ingredients": "Tomate 🍅, Mozzarella 🧀, Pepperoni 🌶️, Cebolla 🧅, Pimiento verde 🫑, Huevo 🥚", "price": "10.50"},
     {"name": "Jazz", "ingredients": "Tomate 🍅, Queso 🧀, Jamón York 🍖, Champiñones 🍄", "price": "10.50"},
-    {"name": "Funk", "ingredients": "Tomate 🍅, Queso 🧀, Peperoni 🌶️", "price": "10.00"}
-  ],
-  "pizzadillos": [
-    {"name": "Aneto", "ingredients": "Pollo 🍗, Pepinillos 🥒, Mayonesa 🥫", "price": "6.00"},
-    {"name": "Tibidabo", "ingredients": "Jamón Serrano, Tomate triturado 🍅, Sal 🧂, Aceite 🫙, Toque de ajo 🧄", "price": "5.00"},
-    {"name": "Machu Picchu", "ingredients": "Ternera 🥩, Pimientos de padrón encurtidos, Crema de queso manchego 🧀", "price": "7.00"},
-    {"name": "El Veleta", "ingredients": "Atún 🐟, Cebolla 🧅, Salsa de mostaza 🟡", "price": "4.50"}
+    {"name": "Funk", "ingredients": "Tomate 🍅, Queso 🧀, Peperoni 🌶️", "price": "10.00"},
+    {"name": "Rap", "ingredients": "Tomate 🍅, Queso 🧀, Plátano maduro 🍌, Maíz 🌽, Bacon 🥓", "price": "11.00"}
   ],
   "entrantes": [
     {"name": "Huevos Salseros", "ingredients": "Huevos 🥚, Salsa de ajo asado 🧄, trufa 🍄 y mayonesa 🥫", "price": "3.50"}
