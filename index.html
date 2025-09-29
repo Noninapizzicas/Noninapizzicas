@@ -103,8 +103,6 @@
             <div id="menu-pizzicas-2"></div>
         </div>
         <div class="menu-section">
-            <h2>PizzaDillos</h2>
-            <div id="menu-pizzadillos"></div>
             <h2>Entrantes</h2>
             <div id="menu-entrantes"></div>
         </div>
@@ -123,7 +121,6 @@
     .then(data => {
       let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
       let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
-      let menuPizzadillos = document.getElementById('menu-pizzadillos');
       let menuEntrantes = document.getElementById('menu-entrantes');
 
       const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
@@ -144,14 +141,6 @@
                                       <span>${item.ingredients}</span>
                                       <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
                                     </div>`;
-      });
-
-      data.pizzadillos.forEach(item => {
-        menuPizzadillos.innerHTML += `<div class="menu-item">
-                                        <span><strong>${item.name}</strong></span>
-                                        <span>${item.ingredients}</span>
-                                        <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                      </div>`;
       });
 
       data.entrantes.forEach(item => {
