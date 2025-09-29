@@ -103,8 +103,8 @@
             <div id="menu-pizzicas-2"></div>
         </div>
         <div class="menu-section">
-            <h2>Entrantes</h2>
-            <div id="menu-entrantes"></div>
+            <h2>Pizzicas</h2>
+            <div id="menu-pizzicas-3"></div>
         </div>
     </div>
 
@@ -119,38 +119,36 @@
   fetch('menu.json')
     .then(response => response.json())
     .then(data => {
-      let menuPizzicas1 = document.getElementById('menu-pizzicas-1');
-      let menuPizzicas2 = document.getElementById('menu-pizzicas-2');
-      let menuEntrantes = document.getElementById('menu-entrantes');
+      let col1 = document.getElementById('menu-pizzicas-1');
+      let col2 = document.getElementById('menu-pizzicas-2');
+      let col3 = document.getElementById('menu-pizzicas-3');
 
-      const mitadPizzicas = Math.ceil(data.pizzicas.length / 2);
-      const pizzicasColumna1 = data.pizzicas.slice(0, mitadPizzicas);
-      const pizzicasColumna2 = data.pizzicas.slice(mitadPizzicas);
+      const total = data.pizzicas.length;
+      const tercio = Math.ceil(total / 3);
 
-      pizzicasColumna1.forEach(item => {
-        menuPizzicas1.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
+      const colP1 = data.pizzicas.slice(0, tercio);
+      const colP2 = data.pizzicas.slice(tercio, tercio * 2);
+      const colP3 = data.pizzicas.slice(tercio * 2);
 
-      pizzicasColumna2.forEach(item => {
-        menuPizzicas2.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
+      const render = (container, items) => {
+        items.forEach(item => {
+          container.innerHTML += `<div class="menu-item">
+                                    <span><strong>${item.name}</strong></span>
+                                    <span>${item.ingredients}</span>
+                                    <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
+                                  </div>`;
+        });
+      };
 
-      data.entrantes.forEach(item => {
-        menuEntrantes.innerHTML += `<div class="menu-item">
-                                      <span><strong>${item.name}</strong></span>
-                                      <span>${item.ingredients}</span>
-                                      <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                    </div>`;
-      });
+      render(col1, colP1);
+      render(col2, colP2);
+      render(col3, colP3);
     });
+
+  // Placeholder para mantener el botón; implementa tu lógica de PDF si aplica
+  function downloadPDF() {
+    alert('Función de descarga de PDF no implementada en este archivo.');
+  }
 </script>
 
 </body>
