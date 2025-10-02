@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizzicas - Columna 1</title>
-  <style>
-    body { font-family: 'Arial', sans-serif; margin: 5px; background: #f0f0f0; }
-    .container { max-width: 300px; margin: 0 auto; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
-    h2 { font-size: 16px; border-bottom: 1px solid #ff6347; padding-bottom: 5px; margin-bottom: 10px;}
-    .menu-item { font-size: 12px; border-bottom: 1px solid #ddd; padding: 5px 0; }
-    .menu-item strong { color: #333; }
-    .menu-item span.price { display: flex; justify-content: flex-end; align-items: center; }
-    .menu-item img { width: 10px; margin-left: 5px; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pizzicas – Columna 1</title>
+<style>
+  @page { size: A4; margin: 8mm; }
+  * { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: #fff;
+  }
+  .sheet {
+    max-width: 210mm;
+    min-height: calc(297mm - 16mm); /* A4 alto menos márgenes @page */
+    margin: 0 auto;
+    padding: 4mm 6mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  h1 { font-size: 18px; margin: 0 0 6mm 0; text-align: center; }
+  .list { width: 100%; }
+  .item {
+    padding: 2mm 0;
+    border-bottom: 0.2mm solid #eee;
+    page-break-inside: avoid;
+  }
+  .name { font-weight: 700; font-size: 12px; }
+  .ingredients { font-size: 10px; margin-top: 1mm; }
+  .price { font-size: 10px; text-align: right; margin-top: 1mm; }
+  @media print {
+    .sheet { box-shadow: none; }
+  }
+  @media screen {
+    body { background: #f0f0f0; }
+    .sheet { box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+  }
+</style>
 </head>
 <body>
-<div class="container">
-  <h2>Pizzicas</h2>
-  <div id="menu-col"></div>
-</div>
+  <div class="sheet">
+    <h1>Pizzicas</h1>
+    <div class="list" id="col"></div>
+  </div>
 <script>
+  // CONFIG
+  const COLUMN_INDEX = 0; // 0 = primera columna
+  const COLUMNS = 3;
+
   fetch('menu.json')
     .then(r => r.json())
     .then(data => {
-      const total = data.pizzicas.length;
-      const tercio = Math.ceil(total / 3);
-      const items = data.pizzicas.slice(0, tercio);
-      let col = document.getElementById('menu-col');
-      items.forEach(item => {
-        col.innerHTML += `<div class="menu-item">
-                            <span><strong>${item.name}</strong></span>
-                            <span>${item.ingredients}</span>
-                            <span class="price">${item.price} <img src="euro.png"></span>
-                          </div>`;
+      const items = Array.isArray(data.pizzicas) ? data.pizzicas : [];
+      const total = items.length;
+      const base = Math.floor(total / COLUMNS);
+      const remainder = total % COLUMNS;
+
+      // Reparto equilibrado: las primeras "remainder" columnas reciben +1
+      const start = COLUMN_INDEX * base + Math.min(COLUMN_INDEX, remainder);
+      const count = base + (COLUMN_INDEX < remainder ? 1 : 0);
+      const end = start + count;
+
+      const slice = items.slice(start, end);
+      const $col = document.getElementById('col');
+
+      slice.forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'item';
+        el.innerHTML = `
+          <div class="name">${item.name ?? ''}</div>
+          <div class="ingredients">${item.ingredients ?? ''}</div>
+          <div class="price">${item.price ?? ''}</div>
+        `;
+        $col.appendChild(el);
       });
+      window.print && (window.onafterprint = () => {});
+    })
+    .catch(err => {
+      document.getElementById('col').textContent = 'No se pudo cargar menu.json';
+      console.error(err);
     });
 </script>
 </body>
