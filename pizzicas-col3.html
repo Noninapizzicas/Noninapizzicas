@@ -1,40 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizzicas - Columna 3</title>
-  <style>
-    body { font-family: 'Arial', sans-serif; margin: 5px; background: #f0f0f0; }
-    .container { max-width: 300px; margin: 0 auto; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
-    h2 { font-size: 16px; border-bottom: 1px solid #ff6347; padding-bottom: 5px; margin-bottom: 10px;}
-    .menu-item { font-size: 12px; border-bottom: 1px solid #ddd; padding: 5px 0; }
-    .menu-item strong { color: #333; }
-    .menu-item span.price { display: flex; justify-content: flex-end; align-items: center; }
-    .menu-item img { width: 10px; margin-left: 5px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pizzicas</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm; /* márgenes mínimos seguros para impresoras domésticas */
+  }
+  :root {
+    --title: 24pt;
+    --name: 18pt;
+    --ingredients: 14pt;
+    --price: 18pt;
+    --gap: 6pt;
+    --divider: 0.6pt;
+  }
+  @media print {
+    html, body { width: 210mm; height: 297mm; }
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: var(--title);
+    margin: 0 0 8pt 0;
+    text-align: center;
+    letter-spacing: 0.5pt;
+  }
+  .item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 2pt;
+    padding: 6pt 0;
+    border-bottom: var(--divider) solid #888;
+    page-break-inside: avoid;
+  }
+  .name {
+    grid-column: 1 / 2;
+    font-size: var(--name);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+  .price {
+    grid-column: 2 / 3;
+    align-self: start;
+    font-size: var(--price);
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 8pt;
+  }
+  .ingredients {
+    grid-column: 1 / 3;
+    font-size: var(--ingredients);
+    line-height: 1.2;
+    color: #111;
+  }
+  .footer {
+    margin-top: 8pt;
+    font-size: 9pt;
+    text-align: center;
+    color: #666;
+  }
+</style>
 </head>
 <body>
-<div class="container">
-  <h2>Pizzicas</h2>
-  <div id="menu-col"></div>
-</div>
-<script>
-  fetch('menu.json')
-    .then(r => r.json())
-    .then(data => {
-      const total = data.pizzicas.length;
-      const tercio = Math.ceil(total / 3);
-      const items = data.pizzicas.slice(tercio * 2);
-      let col = document.getElementById('menu-col');
-      items.forEach(item => {
-        col.innerHTML += `<div class="menu-item">
-                            <span><strong>${item.name}</strong></span>
-                            <span>${item.ingredients}</span>
-                            <span class="price">${item.price} <img src="euro.png"></span>
-                          </div>`;
-      });
-    });
-</script>
+  <div class="page">
+    <h1>PIZZICAS — COLUMNA 3</h1>
+    <div class="item"><div class="name">Ranchera</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Bacon 🥓, Cebolla 🧅, Salsa BBQ 🔥</div></div><div class="item"><div class="name">Rockabilly</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Bacon 🥓, Cebolla 🧅, Nata 🥛</div></div><div class="item"><div class="name">Vallenato</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, York 🍖, Piña 🍍</div></div><div class="item"><div class="name">Indie</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, York 🍖, Pepperoni 🌶️</div></div><div class="item"><div class="name">K-Pop</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, York 🍖, Huevo 🥚</div></div><div class="item"><div class="name">Flamenco</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Pepperoni 🌶️, Cebolla 🧅, Pimiento verde 🫑, Huevo 🥚</div></div><div class="item"><div class="name">Jazz</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Queso 🧀, Jamón York 🍖, Champiñones 🍄</div></div><div class="item"><div class="name">Funk</div><div class="price">10.00 €</div><div class="ingredients">Tomate 🍅, Queso 🧀, Peperoni 🌶️</div></div>
+    <div class="footer">Documento A4 optimizado para impresión • Columna 3</div>
+  </div>
 </body>
 </html>
