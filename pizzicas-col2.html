@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzicas - Columna 2</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 5px; background: #f0f0f0; }
+    .container { max-width: 300px; margin: 0 auto; padding: 10px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+    h2 { font-size: 16px; border-bottom: 1px solid #ff6347; padding-bottom: 5px; margin-bottom: 10px;}
+    .menu-item { font-size: 12px; border-bottom: 1px solid #ddd; padding: 5px 0; }
+    .menu-item strong { color: #333; }
+    .menu-item span.price { display: flex; justify-content: flex-end; align-items: center; }
+    .menu-item img { width: 10px; margin-left: 5px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Pizzicas</h2>
+  <div id="menu-col"></div>
+</div>
+<script>
+  fetch('menu.json')
+    .then(r => r.json())
+    .then(data => {
+      const total = data.pizzicas.length;
+      const tercio = Math.ceil(total / 3);
+      const items = data.pizzicas.slice(tercio, tercio * 2);
+      let col = document.getElementById('menu-col');
+      items.forEach(item => {
+        col.innerHTML += `<div class="menu-item">
+                            <span><strong>${item.name}</strong></span>
+                            <span>${item.ingredients}</span>
+                            <span class="price">${item.price} <img src="euro.png"></span>
+                          </div>`;
+      });
+    });
+</script>
+</body>
+</html>

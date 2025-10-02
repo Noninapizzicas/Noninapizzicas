@@ -1,155 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NO NI NÁ Pizzicas</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 5px;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        h1 {
-            display: none; /* Ocultar el título */
-        }
-
-        .menu-sections {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .menu-section {
-            flex: 1;
-        }
-
-        .menu-section h2 {
-            font-size: 16px;
-            color: #333;
-            border-bottom: 1px solid #ff6347;
-            padding-bottom: 5px;
-            margin-bottom: 5px;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-            font-size: 10px;
-            border-bottom: 1px solid #ddd;
-            flex-direction: column;
-        }
-
-        .menu-item strong {
-            color: #333;
-        }
-
-        .menu-item span.price {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .menu-item img {
-            width: 10px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-
-        .buttons {
-            margin-top: 10px;
-            text-align: center;
-        }
-
-        .buttons button {
-            padding: 5px 10px;
-            font-size: 10px;
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .buttons button:hover {
-            background-color: #e5533c;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NO NI NÁ - Índice de Pizzicas</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #ff6347;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      background: #ff6347;
+      color: white;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      transition: background 0.3s;
+      font-size: 14px;
+    }
+    a:hover {
+      background: #e5533c;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-
-    <div class="menu-sections">
-        <div class="menu-section">
-            <h2>Pizzicas</h2>
-            <div id="menu-pizzicas-1"></div>
-        </div>
-        <div class="menu-section">
-            <h2>Pizzicas</h2>
-            <div id="menu-pizzicas-2"></div>
-        </div>
-        <div class="menu-section">
-            <h2>Pizzicas</h2>
-            <div id="menu-pizzicas-3"></div>
-        </div>
-    </div>
-
-    <div class="buttons">
-        <button onclick="window.print()">Imprimir</button>
-        <button onclick="downloadPDF()">Descargar PDF</button>
-    </div>
-</div>
-
-<script>
-  // Cargar el menú desde el archivo JSON
-  fetch('menu.json')
-    .then(response => response.json())
-    .then(data => {
-      let col1 = document.getElementById('menu-pizzicas-1');
-      let col2 = document.getElementById('menu-pizzicas-2');
-      let col3 = document.getElementById('menu-pizzicas-3');
-
-      const total = data.pizzicas.length;
-      const tercio = Math.ceil(total / 3);
-
-      const colP1 = data.pizzicas.slice(0, tercio);
-      const colP2 = data.pizzicas.slice(tercio, tercio * 2);
-      const colP3 = data.pizzicas.slice(tercio * 2);
-
-      const render = (container, items) => {
-        items.forEach(item => {
-          container.innerHTML += `<div class="menu-item">
-                                    <span><strong>${item.name}</strong></span>
-                                    <span>${item.ingredients}</span>
-                                    <span class="price">${item.price} <img src="euro.png" alt="euro"></span>
-                                  </div>`;
-        });
-      };
-
-      render(col1, colP1);
-      render(col2, colP2);
-      render(col3, colP3);
-    });
-
-  // Placeholder para mantener el botón; implementa tu lógica de PDF si aplica
-  function downloadPDF() {
-    alert('Función de descarga de PDF no implementada en este archivo.');
-  }
-</script>
-
+  <div class="container">
+    <h1>Menú de Pizzicas</h1>
+    <a href="pizzicas-col1.html">Ver Pizzicas - Columna 1</a>
+    <a href="pizzicas-col2.html">Ver Pizzicas - Columna 2</a>
+    <a href="pizzicas-col3.html">Ver Pizzicas - Columna 3</a>
+  </div>
 </body>
 </html>
