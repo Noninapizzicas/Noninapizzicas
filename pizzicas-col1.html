@@ -1,89 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pizzicas</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pizzicas — Columna 1</title>
 <style>
-  @page { size: A4; margin: 8mm; }
-  * { box-sizing: border-box; }
-  html, body {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #222;
-    background: #fff;
+  @page {
+    size: A4 portrait;
+    margin: 10mm; /* márgenes mínimos seguros para impresoras domésticas */
   }
-  .sheet {
-    max-width: 210mm;
-    min-height: calc(297mm - 16mm); /* A4 alto menos márgenes @page */
-    margin: 0 auto;
-    padding: 4mm 6mm;
+  :root {
+    --title: 24pt;
+    --name: 18pt;
+    --ingredients: 14pt;
+    --price: 18pt;
+    --gap: 6pt;
+    --divider: 0.6pt;
+  }
+  @media print {
+    html, body { width: 210mm; height: 297mm; }
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
   }
-  h1 { font-size: 18px; margin: 0 0 6mm 0; text-align: center; }
-  .list { width: 100%; }
+  h1 {
+    font-size: var(--title);
+    margin: 0 0 8pt 0;
+    text-align: center;
+    letter-spacing: 0.5pt;
+  }
   .item {
-    padding: 2mm 0;
-    border-bottom: 0.2mm solid #eee;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: 2pt;
+    padding: 6pt 0;
+    border-bottom: var(--divider) solid #888;
     page-break-inside: avoid;
   }
-  .name { font-weight: 700; font-size: 12px; }
-  .ingredients { font-size: 10px; margin-top: 1mm; }
-  .price { font-size: 10px; text-align: right; margin-top: 1mm; }
-  @media print {
-    .sheet { box-shadow: none; }
+  .name {
+    grid-column: 1 / 2;
+    font-size: var(--name);
+    font-weight: 700;
+    line-height: 1.15;
   }
-  @media screen {
-    body { background: #f0f0f0; }
-    .sheet { box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+  .price {
+    grid-column: 2 / 3;
+    align-self: start;
+    font-size: var(--price);
+    font-weight: 700;
+    white-space: nowrap;
+    margin-left: 8pt;
+  }
+  .ingredients {
+    grid-column: 1 / 3;
+    font-size: var(--ingredients);
+    line-height: 1.2;
+    color: #111;
+  }
+  .footer {
+    margin-top: 8pt;
+    font-size: 9pt;
+    text-align: center;
+    color: #666;
   }
 </style>
 </head>
 <body>
-  <div class="sheet">
-    <h1>Pizzicas</h1>
-    <div class="list" id="col"></div>
+  <div class="page">
+    <h1>PIZZICAS</h1>
+    <div class="item"><div class="name">Country</div><div class="price">11.50 €</div><div class="ingredients">Tomate 🍅, Salsa BBQ 🔥, Nata 🥛, Pollo 🍗, Mezcla de quesos 🧀, Cebolla 🧅, Bacon 🥓</div></div><div class="item"><div class="name">R&B (Rhythm and Blues)</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Carne de ternera 🥩, Bacon 🥓, Queso 🧀, Salsa BBQ 🔥</div></div><div class="item"><div class="name">Hip-Hop</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Queso 🧀, Carne 🥩, Bacon 🥓, Peperoni 🌶️, Salsa Vitorino</div></div><div class="item"><div class="name">Cumbia</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Cebolla 🧅, Ternera 🥩, Mezcla de quesos 🧀, Piña 🍍, Salsa Vitorino</div></div><div class="item"><div class="name">Merengue</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, York 🍖, Bacon 🥓</div></div><div class="item"><div class="name">Soul</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Queso 🧀, Peperoni 🌶️, Bacon 🥓, Champiñones 🍄</div></div><div class="item"><div class="name">Bossa Nova</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Atún 🐟, Champiñón 🍄, Pimiento verde 🫑</div></div><div class="item"><div class="name">Blues</div><div class="price">11.00 €</div><div class="ingredients">Tomate 🍅, Queso 🧀, Atún 🐟, Cebolla 🧅, Maíz 🌽, Salsa de mostaza 🟡</div></div><div class="item"><div class="name">Tango</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Atún 🐟, Cebolla 🧅, Olivas</div></div><div class="item"><div class="name">Chillout</div><div class="price">10.50 €</div><div class="ingredients">Tomate 🍅, Mozzarella 🧀, Atún 🐟, Cebolla 🧅</div></div>
+    <div class="footer">Documento A4 optimizado para impresión • Columna 1</div>
   </div>
-<script>
-  // CONFIG
-  const COLUMN_INDEX = 0; // 0 = primera columna
-  const COLUMNS = 3;
-
-  fetch('menu.json')
-    .then(r => r.json())
-    .then(data => {
-      const items = Array.isArray(data.pizzicas) ? data.pizzicas : [];
-      const total = items.length;
-      const base = Math.floor(total / COLUMNS);
-      const remainder = total % COLUMNS;
-
-      // Reparto equilibrado: las primeras "remainder" columnas reciben +1
-      const start = COLUMN_INDEX * base + Math.min(COLUMN_INDEX, remainder);
-      const count = base + (COLUMN_INDEX < remainder ? 1 : 0);
-      const end = start + count;
-
-      const slice = items.slice(start, end);
-      const $col = document.getElementById('col');
-
-      slice.forEach(item => {
-        const el = document.createElement('div');
-        el.className = 'item';
-        el.innerHTML = `
-          <div class="name">${item.name ?? ''}</div>
-          <div class="ingredients">${item.ingredients ?? ''}</div>
-          <div class="price">${item.price ?? ''}</div>
-        `;
-        $col.appendChild(el);
-      });
-      window.print && (window.onafterprint = () => {});
-    })
-    .catch(err => {
-      document.getElementById('col').textContent = 'No se pudo cargar menu.json';
-      console.error(err);
-    });
-</script>
 </body>
 </html>
