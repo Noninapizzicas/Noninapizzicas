@@ -56,11 +56,11 @@
     display: block;
   }
   /* Cream veil over background so text reads cleanly.
-     With real watercolor PNGs we keep it lighter (0.58) so the painting shows through. */
+     With real watercolor PNGs we keep it lighter (0.50) so the painting shows through. */
   .veil {
     position: absolute;
     inset: 0;
-    background: rgba(255, 248, 232, 0.58);
+    background: rgba(255, 248, 232, 0.50);
     z-index: 1;
     pointer-events: none;
   }
@@ -201,7 +201,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3mm;
+    gap: 2.5mm;
     padding: 4mm 3mm;
     border: 0.8pt dashed #8B1E12;
     border-radius: 3mm;
@@ -230,17 +230,37 @@
     text-transform: uppercase;
     margin-bottom: 0.4mm;
   }
-  .contact .qr {
-    width: 32mm;
-    height: 32mm;
-    object-fit: contain;
+  .contact .qrs {
+    display: flex;
+    gap: 4mm;
+    justify-content: center;
+    align-items: flex-start;
     margin-top: 1mm;
   }
+  .contact .qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8mm;
+  }
+  .contact .qr {
+    width: 28mm;
+    height: 28mm;
+    object-fit: contain;
+  }
   .contact .qr-tag {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: #5a3a20;
     font-style: italic;
-    margin-top: -1mm;
+    line-height: 1.2;
+  }
+  .contact .qr-tag strong {
+    display: block;
+    color: #8B1E12;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 7.5pt;
+    letter-spacing: 0.5pt;
   }
 
   /* ---------- Screen-only controls ---------- */
@@ -408,8 +428,16 @@
             <span class="lbl">🕒 Horario</span>
             Martes a Domingo<br>18:30 – 23:30
           </div>
-          <img class="qr" src="qr_code_noninapizzicas.png" alt="QR pedido online">
-          <div class="qr-tag">Escanea y pide online</div>
+          <div class="qrs">
+            <div class="qr-box">
+              <img class="qr" src="qr_code_noninapizzicas.png" alt="QR pedido online">
+              <div class="qr-tag"><strong>Pedidos online</strong>Pikotea</div>
+            </div>
+            <div class="qr-box">
+              <img class="qr" src="qr_instagram.png" alt="QR Instagram">
+              <div class="qr-tag"><strong>Instagram</strong>@no.ni.na_pizzicas</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
