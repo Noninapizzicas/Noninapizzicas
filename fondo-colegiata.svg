@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" preserveAspectRatio="xMidYMid slice">
+  <title>Colegiata de San Patricio de Lorca (acuarela minimalista)</title>
+  <defs>
+    <filter id="wc" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="11" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5"/>
+    </filter>
+    <filter id="wc-rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="5" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="2"/>
+    </filter>
+    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="1.8"/>
+    </filter>
+
+    <!-- Vibrant mediterranean sky -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F86B8"/>
+      <stop offset="45%" stop-color="#6CBDDD"/>
+      <stop offset="80%" stop-color="#F4D68A"/>
+      <stop offset="100%" stop-color="#E8A248"/>
+    </linearGradient>
+
+    <!-- Sandstone facade -->
+    <linearGradient id="facade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F0C070"/>
+      <stop offset="55%" stop-color="#D08A2E"/>
+      <stop offset="100%" stop-color="#7A4010"/>
+    </linearGradient>
+
+    <linearGradient id="facade2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E6B058"/>
+      <stop offset="100%" stop-color="#8A4A14"/>
+    </linearGradient>
+
+    <radialGradient id="sunhalo" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FFF6C4"/>
+      <stop offset="50%" stop-color="#FFE47A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFC040" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="297" height="210" fill="url(#sky)"/>
+
+  <!-- Watercolor blooms -->
+  <ellipse cx="260" cy="45" rx="70" ry="35" fill="#6CBDDD" opacity="0.55" filter="url(#bloom)"/>
+  <ellipse cx="30" cy="35" rx="55" ry="30" fill="#1F86B8" opacity="0.45" filter="url(#bloom)"/>
+  <ellipse cx="285" cy="190" rx="75" ry="40" fill="#E8A248" opacity="0.55" filter="url(#bloom)"/>
+  <ellipse cx="15" cy="180" rx="60" ry="35" fill="#7A4010" opacity="0.5" filter="url(#bloom)"/>
+  <ellipse cx="150" cy="205" rx="110" ry="22" fill="#D08A2E" opacity="0.45" filter="url(#bloom)"/>
+
+  <!-- Sun (soft daytime) -->
+  <circle cx="55" cy="55" r="45" fill="url(#sunhalo)"/>
+  <circle cx="55" cy="55" r="18" fill="#FFF6C4" opacity="0.75" filter="url(#soft)"/>
+
+  <!-- Small clouds -->
+  <ellipse cx="210" cy="40" rx="28" ry="7" fill="#FFFFFF" opacity="0.55" filter="url(#soft)"/>
+  <ellipse cx="100" cy="28" rx="22" ry="5" fill="#FFFFFF" opacity="0.5" filter="url(#soft)"/>
+
+  <!-- Distant town silhouette (rooftops) -->
+  <path d="M 0 158 L 12 158 L 12 152 L 22 152 L 22 158 L 35 158 L 35 150 L 48 150 L 48 158 L 62 158 L 62 154 L 74 154 L 74 158 L 88 158 L 88 152 L 100 152 L 100 158 L 230 158 L 230 152 L 244 152 L 244 158 L 258 158 L 258 150 L 272 150 L 272 158 L 286 158 L 286 154 L 297 154 L 297 210 L 0 210 Z"
+        fill="#A85820" opacity="0.4" filter="url(#wc)"/>
+
+  <!-- Colegiata — baroque facade silhouette -->
+  <g opacity="0.82" filter="url(#wc-rough)">
+    <!-- Side wing left -->
+    <rect x="88" y="110" width="28" height="50" fill="url(#facade2)"/>
+    <!-- Main body -->
+    <rect x="116" y="78" width="68" height="82" fill="url(#facade)"/>
+    <!-- Triangular pediment (broken baroque pediment) -->
+    <path d="M 116 78 L 150 56 L 184 78 Z" fill="#8A4A14"/>
+    <!-- Central cross -->
+    <rect x="149" y="46" width="2.5" height="10" fill="#5A2A0A"/>
+    <rect x="146" y="48" width="8" height="2" fill="#5A2A0A"/>
+    <!-- Central rose window -->
+    <circle cx="150" cy="98" r="7" fill="#3A1808" opacity="0.7"/>
+    <!-- Central portal -->
+    <path d="M 142 140 L 142 118 Q 150 112 158 118 L 158 140 Z" fill="#3A1808" opacity="0.7"/>
+    <!-- Columns hinting (vertical strokes on facade) -->
+    <rect x="122" y="88" width="2" height="52" fill="#6A2E08" opacity="0.5"/>
+    <rect x="132" y="88" width="2" height="52" fill="#6A2E08" opacity="0.5"/>
+    <rect x="166" y="88" width="2" height="52" fill="#6A2E08" opacity="0.5"/>
+    <rect x="176" y="88" width="2" height="52" fill="#6A2E08" opacity="0.5"/>
+
+    <!-- Side wing right -->
+    <rect x="184" y="110" width="28" height="50" fill="url(#facade2)"/>
+
+    <!-- Bell tower (campanario) on far right -->
+    <rect x="218" y="62" width="24" height="98" fill="url(#facade)"/>
+    <!-- Bell tower roof -->
+    <path d="M 216 62 L 230 46 L 244 62 Z" fill="#8A4A14"/>
+    <!-- Spire -->
+    <rect x="229" y="36" width="2" height="10" fill="#5A2A0A"/>
+    <rect x="226" y="38" width="8" height="2" fill="#5A2A0A"/>
+    <!-- Bell openings -->
+    <rect x="224" y="74" width="12" height="16" fill="#3A1808" opacity="0.7"/>
+    <rect x="224" y="98" width="12" height="12" fill="#3A1808" opacity="0.6"/>
+  </g>
+
+  <!-- Ground strip -->
+  <rect x="0" y="172" width="297" height="38" fill="#6A3410" opacity="0.22"/>
+
+  <!-- Soft warm wash -->
+  <rect width="297" height="210" fill="#F4D68A" opacity="0.05"/>
+</svg>

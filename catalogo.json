@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "id": "catalogo_activo",
+    "nombre": "Catálogo Activo",
+    "updated_at": "2026-03-30T14:26:20.387Z"
+  },
+  "categorias": [
+    { "id": "pizzicas",      "nombre": "Pizzicas",      "orden": 1, "estaciones": ["horno"], "activa": true },
+    { "id": "entrantes",     "nombre": "Entrantes",     "orden": 2, "activa": true },
+    { "id": "bebidas",       "nombre": "Bebidas",       "orden": 3, "activa": true },
+    { "id": "pancitos",      "nombre": "Pancitos",      "orden": 4, "activa": true },
+    { "id": "hot_dog_music", "nombre": "Hot Dog Music", "orden": 5, "activa": true }
+  ],
+  "productos": [
+    { "id": "pizzicas_bachata",             "nombre": "Bachata",             "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Anchoas 🐟, Alcaparras 🌿, Cebolla 🧅, Olivas 🫒" },
+    { "id": "pizzicas_batucada",            "nombre": "Batucada",            "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Queso azul 🧀, Mezcla de quesos 🧀, Nata 🥛" },
+    { "id": "pizzicas_blues",               "nombre": "Blues",               "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Atún 🐟, Cebolla 🧅, Salsa de mostaza 🥫" },
+    { "id": "pizzicas_bossa_nova",          "nombre": "Bossa Nova",          "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Atún 🐟, Champiñón 🍄, Pimiento verde 🫑" },
+    { "id": "pizzicas_chillout",            "nombre": "Chillout",            "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Atún 🐟, Cebolla 🧅" },
+    { "id": "pizzicas_country",             "nombre": "Country",             "categoria": "pizzicas", "precio": 11.5, "ingredientes_txt": "Tomate 🍅, Salsa BBQ 🥫, Nata 🥛, Pollo 🍗, Mezcla de quesos 🧀, Cebolla 🧅, Bacon 🥓" },
+    { "id": "pizzicas_cumbia",              "nombre": "Cumbia",              "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Cebolla 🧅, Ternera 🥩, Mezcla de quesos 🧀, Piña 🍍, Salsa Vitorino 🥫" },
+    { "id": "pizzicas_fandango",            "nombre": "Fandango",            "categoria": "pizzicas", "precio": 9.5,  "ingredientes_txt": "Ajo 🧄, Mozzarella 🧀, Queso azul 🧀" },
+    { "id": "pizzicas_flamenco",            "nombre": "Flamenco",            "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Pepperoni 🍖, Cebolla 🧅, Pimiento verde 🫑, Huevo 🥚" },
+    { "id": "pizzicas_folk",                "nombre": "Folk",                "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate seco 🍅, Mozzarella 🧀, Cebolla 🧅, Champiñón 🍄, Salsa de ajo asado y trufa 🧄, Anchoas 🐟" },
+    { "id": "pizzicas_funk",                "nombre": "Funk",                "categoria": "pizzicas", "precio": 10,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Pepperoni 🍖" },
+    { "id": "pizzicas_hip_hop",             "nombre": "Hip-Hop",             "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Ternera 🥩, Bacon 🥓, Pepperoni 🍖, Salsa Vitorino 🥫" },
+    { "id": "pizzicas_indie",               "nombre": "Indie",               "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Pepperoni 🍖" },
+    { "id": "pizzicas_jazz",                "nombre": "Jazz",                "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Champiñón 🍄" },
+    { "id": "pizzicas_k_pop",               "nombre": "K-Pop",               "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Huevo 🥚" },
+    { "id": "pizzicas_merengue",            "nombre": "Merengue",            "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Bacon 🥓" },
+    { "id": "pizzicas_milonga",             "nombre": "Milonga",             "categoria": "pizzicas", "precio": 10,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓" },
+    { "id": "pizzicas_opera",               "nombre": "Ópera",               "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate cherry 🍅, Mantequilla de ajo 🧈, Salami 🍖, Mozzarella 🧀, Sésamo 🌰, Albahaca 🌿" },
+    { "id": "pizzicas_pop",                 "nombre": "Pop",                 "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Queso gorgonzola 🧀, Uva 🍇, Mozzarella 🧀, Sésamo 🌰, Bacon 🥓" },
+    { "id": "pizzicas_punk",                "nombre": "Punk",                "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Atún 🐟, Olivas negras 🫒, Maíz 🌽" },
+    { "id": "pizzicas_rb_rhythm_and_blues", "nombre": "R&B (Rhythm and Blues)", "categoria": "pizzicas", "precio": 11, "ingredientes_txt": "Tomate 🍅, Ternera 🥩, Bacon 🥓, Mozzarella 🧀, Salsa BBQ 🥫" },
+    { "id": "pizzicas_ranchera",            "nombre": "Ranchera",            "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Bacon 🥓, Cebolla 🧅, Salsa BBQ 🥫" },
+    { "id": "pizzicas_rap",                 "nombre": "Rap",                 "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Plátano maduro 🍌, Maíz 🌽, Bacon 🥓" },
+    { "id": "pizzicas_rockabilly",          "nombre": "Rockabilly",          "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Bacon 🥓, Cebolla 🧅, Nata 🥛" },
+    { "id": "pizzicas_samba",               "nombre": "Samba",               "categoria": "pizzicas", "precio": 9.5,  "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Albahaca 🌿" },
+    { "id": "pizzicas_soul",                "nombre": "Soul",                "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Pepperoni 🍖, Bacon 🥓, Champiñón 🍄" },
+    { "id": "pizzicas_swing",               "nombre": "Swing",               "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Crema de champiñones 🍄, Nata 🥛, Pimienta 🌶️, Queso azul 🧀, Jamón York 🥓, Mezcla de quesos 🧀" },
+    { "id": "pizzicas_tango",               "nombre": "Tango",               "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Atún 🐟, Cebolla 🧅, Olivas 🫒" },
+    { "id": "pizzicas_the_veggie_symphony", "nombre": "The Veggie Symphony", "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Cebolla 🧅, Champiñón 🍄, Calabacín 🥒, Espárragos 🌱, Pimiento verde 🫑" },
+    { "id": "pizzicas_trap",                "nombre": "Trap",                "categoria": "pizzicas", "precio": 11,   "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Pepperoni 🍖, Nata 🥛, Maíz 🌽, Pimiento verde 🫑" },
+    { "id": "pizzicas_vallenato",           "nombre": "Vallenato",           "categoria": "pizzicas", "precio": 10.5, "ingredientes_txt": "Tomate 🍅, Mozzarella 🧀, Jamón York 🥓, Piña 🍍" },
+
+    { "id": "entrantes_huevos_salseros",                       "nombre": "Huevos Salseros",                      "categoria": "entrantes", "precio": 3.5, "ingredientes_txt": "Huevo 🥚, Salsa de ajo, trufa y mayonesa 🧄" },
+    { "id": "entrantes_patatas_fritas_con_nuestras_2_salsas",  "nombre": "Patatas fritas con nuestras 2 salsas", "categoria": "entrantes", "precio": 5,   "ingredientes_txt": "Patatas fritas 🍟, Salsa especial 1 🥫, Salsa especial 2 🥫" },
+    { "id": "entrantes_champinones",                           "nombre": "Champiñones",                          "categoria": "entrantes", "precio": 3,   "ingredientes_txt": "Champiñón 🍄" },
+    { "id": "entrantes_pimientos_de_padron",                   "nombre": "Pimientos de Padrón",                  "categoria": "entrantes", "precio": 3,   "ingredientes_txt": "Pimiento de Padrón 🫑" },
+
+    { "id": "pancitos_smells_like_teen_spirit", "nombre": "\"Smells Like Teen Spirit\" (Nirvana) - Huele a Espíritu Adolescente", "categoria": "pancitos", "precio": 5, "ingredientes_txt": "Alioli/ajo 🧄, Atún 🐟, Olivas negras 🫒, Pimiento verde 🫑" },
+    { "id": "pancitos_sweet_emotion",           "nombre": "\"Sweet Emotion\" (Aerosmith) - Dulce Emoción",                         "categoria": "pancitos", "precio": 5, "ingredientes_txt": "Atún 🐟, Cebolla cruda 🧅, Mostaza 🟡" },
+    { "id": "pancitos_hot_n_cold",              "nombre": "\"Hot N Cold\" (Katy Perry) - Caliente y Frío",                         "categoria": "pancitos", "precio": 6, "ingredientes_txt": "Pollo asado 🍗, Mayonesa 🥫, Pepinillo agridulce 🥒" },
+
+    { "id": "hot_dog_music_hot_dog_classic", "nombre": "Hot Dog Classic", "categoria": "hot_dog_music", "precio": 3.5, "ingredientes_txt": "Salchicha 🌭, Pan 🍞, Mozzarella 🧀" },
+
+    { "id": "bebidas_refresco",  "nombre": "Refresco",    "categoria": "bebidas", "precio": 1.5, "ingredientes_txt": "" },
+    { "id": "bebidas_cerveza",   "nombre": "Cerveza",     "categoria": "bebidas", "precio": 1.5, "ingredientes_txt": "" },
+    { "id": "bebidas_vermut",    "nombre": "Vermut",      "categoria": "bebidas", "precio": 2,   "ingredientes_txt": "" },
+    { "id": "bebidas_agua",      "nombre": "Agua",        "categoria": "bebidas", "precio": 1,   "ingredientes_txt": "" },
+    { "id": "bebidas_vino_vaso", "nombre": "Vino (vaso)", "categoria": "bebidas", "precio": 1,   "ingredientes_txt": "" }
+  ],
+  "local": {
+    "nombre": "NO NI NÁ Pizzicas",
+    "direccion": "Juan Carlos I, 49, Lorca",
+    "telefono": "+34 643 283 034",
+    "horario": "Martes a Domingo · 18:30 – 23:30",
+    "pedido_online": "https://menu.pikotea.com/#/ahJlfnBpa290ZWEtc2VydmVyLTJyFwsSClJlc3RhdXJhbnQYgICAndDj0QsM////RECOGER"
+  }
+}
