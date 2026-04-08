@@ -55,11 +55,12 @@
     object-fit: cover;
     display: block;
   }
-  /* Cream veil over background so text reads cleanly */
+  /* Cream veil over background so text reads cleanly.
+     With real watercolor PNGs we keep it lighter (0.58) so the painting shows through. */
   .veil {
     position: absolute;
     inset: 0;
-    background: rgba(255, 248, 232, 0.72);
+    background: rgba(255, 248, 232, 0.58);
     z-index: 1;
     pointer-events: none;
   }
@@ -270,7 +271,7 @@
      Fondo: Castillo de Lorca (Fortaleza del Sol) · atardecer
      ============================================================ -->
 <section class="page">
-  <div class="bg"><img src="fondo-castillo.svg" alt=""></div>
+  <div class="bg"><img src="fondo-castillo.png" alt=""></div>
   <div class="veil"></div>
   <div class="content">
     <header>
@@ -338,7 +339,7 @@
      Fondo: Colegiata de San Patricio · cielo mediterráneo
      ============================================================ -->
 <section class="page">
-  <div class="bg"><img src="fondo-colegiata.svg" alt=""></div>
+  <div class="bg"><img src="fondo-colegiata.png" alt=""></div>
   <div class="veil"></div>
   <div class="content">
     <header>
