@@ -16,8 +16,26 @@
     margin: 0;
   }
   @media print {
-    html, body { margin: 0; padding: 0; background: #fff; }
-    .page { box-shadow: none !important; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      width: 297mm;
+    }
+    .page {
+      box-shadow: none !important;
+      margin: 0 !important;
+      width: 297mm !important;
+      height: 210mm !important;
+      page-break-after: always;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      break-after: page;
+    }
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
     .screen-only { display: none !important; }
   }
   * { box-sizing: border-box; }
@@ -37,27 +55,24 @@
     position: relative;
     overflow: hidden;
     page-break-after: always;
+    page-break-inside: avoid;
     margin: 10mm auto;
-    background: #fff;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     box-shadow: 0 6px 24px rgba(0,0,0,0.25);
   }
   .page:last-child { page-break-after: auto; }
 
-  .bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  /* Watercolor backgrounds (CSS, not <img>, so print engines don't paginate them) */
+  .page-a { background-image: url('fondo-castillo.png'); }
+  .page-b { background-image: url('fondo-colegiata.png'); }
+
   /* Cream veil over background so text reads cleanly.
      With real watercolor PNGs we keep it lighter (0.50) so the painting shows through. */
-  .veil {
+  .page::before {
+    content: '';
     position: absolute;
     inset: 0;
     background: rgba(255, 248, 232, 0.50);
@@ -290,9 +305,7 @@
      CARA A — PIZZICAS
      Fondo: Castillo de Lorca (Fortaleza del Sol) · atardecer
      ============================================================ -->
-<section class="page">
-  <div class="bg"><img src="fondo-castillo.png" alt=""></div>
-  <div class="veil"></div>
+<section class="page page-a">
   <div class="content">
     <header>
       <img class="logo" src="logo_noninapizzicas.png" alt="NO NI NÁ">
@@ -358,9 +371,7 @@
      CARA B — ENTRANTES · PANCITOS · HOT DOG MUSIC · CONTACTO
      Fondo: Colegiata de San Patricio · cielo mediterráneo
      ============================================================ -->
-<section class="page">
-  <div class="bg"><img src="fondo-colegiata.png" alt=""></div>
-  <div class="veil"></div>
+<section class="page page-b">
   <div class="content">
     <header>
       <img class="logo" src="logo_noninapizzicas.png" alt="NO NI NÁ">
