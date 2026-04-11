@@ -70,12 +70,12 @@
   .page-b { background-image: url('fondo-colegiata.png'); }
 
   /* Cream veil over background so text reads cleanly.
-     With real watercolor PNGs we keep it lighter (0.50) so the painting shows through. */
+     Higher value = more attenuated watercolor (less visible). */
   .page::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(255, 248, 232, 0.50);
+    background: rgba(255, 248, 232, 0.68);
     z-index: 1;
     pointer-events: none;
   }

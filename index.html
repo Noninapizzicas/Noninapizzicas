@@ -3,53 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NO NI NÁ - Índice de Pizzicas</title>
+  <title>NO NI NÁ Pizzicas · Lorca</title>
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f0f0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 20px;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      background: linear-gradient(135deg, #FFE4A8 0%, #E8715C 60%, #8B1E12 100%);
+      color: #1a0f08;
     }
-    .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    .card {
+      background: rgba(255, 250, 235, 0.95);
+      padding: 36px 32px;
+      border-radius: 14px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
       text-align: center;
-      max-width: 400px;
+      max-width: 440px;
+      width: 100%;
+    }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 14px;
     }
     h1 {
-      color: #ff6347;
-      font-size: 22px;
-      margin-bottom: 20px;
+      color: #8B1E12;
+      font-size: 26px;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
     }
-    a {
+    .sub {
+      color: #5a3a20;
+      font-size: 13px;
+      font-style: italic;
+      margin: 0 0 24px 0;
+    }
+    a.btn {
       display: block;
       text-decoration: none;
-      background: #ff6347;
-      color: white;
-      padding: 10px;
+      background: #8B1E12;
+      color: #fff;
+      padding: 14px 18px;
       margin: 10px 0;
-      border-radius: 6px;
-      transition: background 0.3s;
-      font-size: 14px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.1s;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
-    a:hover {
-      background: #e5533c;
+    a.btn:hover {
+      background: #a5261a;
+      transform: translateY(-1px);
+    }
+    a.btn.secondary {
+      background: transparent;
+      color: #8B1E12;
+      border: 2px solid #8B1E12;
+    }
+    a.btn.secondary:hover {
+      background: #8B1E12;
+      color: #fff;
+    }
+    .info {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(139, 30, 18, 0.4);
+      font-size: 12px;
+      color: #5a3a20;
+      line-height: 1.6;
+    }
+    .info strong {
+      color: #8B1E12;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Menú de Pizzicas</h1>
-    <a href="pizzicas-col1.html">Ver Pizzicas - Columna 1</a>
-    <a href="pizzicas-col2.html">Ver Pizzicas - Columna 2</a>
-    <a href="pizzicas-col3.html">Ver Pizzicas - Columna 3</a>
+  <div class="card">
+    <img class="logo" src="logo_noninapizzicas.png" alt="NO NI NÁ Pizzicas">
+    <h1>No Ni Ná Pizzicas</h1>
+    <p class="sub">Hechas con mimo, ingredientes del alma y un pellizco de Mediterráneo</p>
+
+    <a class="btn" href="carta-apaisada.html">📖 Ver la carta</a>
+    <a class="btn secondary" href="https://www.instagram.com/no.ni.na_pizzicas/" target="_blank" rel="noopener">📸 Síguenos en Instagram</a>
+
+    <div class="info">
+      <strong>📍 Juan Carlos I, 49 · Lorca</strong><br>
+      <strong>📞 +34 643 283 034</strong><br>
+      <strong>🕒 Martes a Domingo · 18:30 – 23:30</strong>
+    </div>
   </div>
 </body>
 </html>
